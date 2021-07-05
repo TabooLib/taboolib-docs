@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+set -e
+
+LOCALE=$1
+# Lookup language code
+LANGUAGE_CODE=`language-code "$LOCALE"`
+
+# The directory where we store the built files
+dist_dir="dist/$VERSION/$LANGUAGE_CODE"
+mkdir -p "$dist_dir"
+
+# Register path to HTML ZIP download (we'll build it later)
+export HTML_DOWNLOAD="spongedocs-$VERSION-$LANGUAGE_CODE.zip"
+
+# Build HTML docs
+echo "Building page for $LANGUAGE_CODE..."
+sphinx-build -q -D "language=$LOCALE" -d "build/$LOCALE/doctrees" source "$dist_dir" -w "$dist_dir/build-log.txt" > /dev/null
+
+# Replace working directory in log file
+sed -i "s@$PWD/source/@@g" "$dist_dir/build-log.txt"
+
+# Append build timestamp
+echo "Build completed: $(date -u +"%Y-%m-%d %H:%M:%S")" >> "$dist_dir/build-log.txt"
+
+echo "Building ZIP for $LANGUAGE_CODE..."
+cd "$dist_dir"
+zip -9 -q -r "$HTML_DOWNLOAD" .

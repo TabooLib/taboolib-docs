@@ -1,0 +1,102 @@
+@import "montserrat";
+@import "cc_icons";
+
+@import "navbar";
+@import "code_tomorrow_night";
+@import "options";
+
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+  // Use Montserrat as font for headings
+  font-family: $sponge_headline_font;
+  font-weight: 600;
+}
+
+// Use full screen width
+@media screen and (min-width: 1400px) {
+  .wy-nav-content {
+    margin: auto !important;
+    max-width: 850px !important;
+  }
+
+  .wy-nav-content-wrap {
+    background: none;
+  }
+}
+
+// Use brand color for sidebar
+.wy-nav-side {
+  background: $sponge_grey;
+  padding-bottom: 44px;
+}
+
+.wy-side-scroll {
+  // Display scroll bars on sidebar only when necessary
+  // (applies only to collapsed sidebar)
+  overflow-y: auto;
+}
+
+// Enable line wrapping in tables
+.wy-table-responsive table td, .wy-table-responsive table th {
+  white-space: normal;
+}
+
+// Fix font size in paragraphs within tables
+table p {
+   font-size: inherit;
+
+  // Reduce bottom margin
+  margin-bottom: 12px;
+}
+
+.wy-alert-title a.fa {
+  float: right;
+  line-height: 24px;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+// Increase space between icon and text in footer navigation buttons
+.rst-footer-buttons {
+  .fa-angle-right {
+    margin-left: 2px;
+  }
+  .fa-angle-left {
+    margin-right: 2px;
+  }
+}
+
+#license-icons {
+  display: block;
+
+  font-family: 'CC Icons';
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: center;
+  user-select: none;
+
+  &, &:active, &:visited {
+    color: #333333;
+  }
+
+  &:hover {
+    color: $sponge_yellow;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #license-footer {
+    display: table;
+
+    > * {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  #license-icons {
+    padding-left: 15px;
+  }
+}

@@ -1,0 +1,37 @@
+@import "sponge_variables";
+
+// Language flags
+.language-flag {
+  height: 20px;
+  width: auto;
+  border-radius: 2px;
+}
+
+#languages img {
+  @extend .language-flag;
+}
+
+.rst-versions {
+  background: shade($sponge_grey, 35%);
+  border: none;
+
+  .rst-current-version {
+    color: $sponge_yellow;
+    background: $sponge_dark_grey;
+
+    i span {
+      // Put some space between icon and "SpongeDocs"
+      margin-left: 3px;
+    }
+
+    img {
+      @extend .language-flag;
+      margin-left: 2px;
+    }
+  }
+}
+
+.rst-other-versions .current {
+  // Mark currently selected options
+  font-weight: bold;
+}

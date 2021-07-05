@@ -1,0 +1,71 @@
+{% macro mark_current(compare, current) %}
+    {% if compare == current %}class="current"{% endif %}
+{% endmacro %}
+
+{% macro language_flag(locale) %}
+    <img src="{{ pathto('_static/flags/' + locale + '.svg', 1) }}"
+         alt="{{ locale|language_code }}" title="{{ locale|language_display_name }}">
+{% endmacro %}
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <i class="fa fa-book"> <span>SpongeDocs</span></i>
+        v: {{ release }}
+        {% if language and language != 'translate' %}{{ language_flag(language) }}{% endif %}
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div id="versions" class="rst-other-versions">
+
+        {# Languages #}
+        {% if locales[current_version] %}
+            <dl id="languages">
+                <dt>{% trans %}Languages{% endtrans %}</dt>
+                {% for locale in locales[current_version] %}
+                    {% if locale != 'translate' %}
+                        <dd><a href="{{ page_link(language=locale) }}">{{ language_flag(locale) }}</a></dd>
+                    {% endif %}
+                {% endfor %}
+            </dl>
+        {% endif %}
+
+        {# Versions #}
+        {% if versions %}
+            <dl>
+                <dt>{% trans %}Versions{% endtrans %}</dt>
+                {% for version in versions %}
+                    <dd>
+                        {%  if language and language in locales[version] %}
+                        <a {{ mark_current(version, current_version) }}
+                            href="{{ page_link(version=version) }}">{{ version }}
+                        </a>
+                        {% else %}
+                        <a href="{{ page_link(version=version, language="en") }}">{{ version }} (en)</a>
+                        {% endif %}
+                    </dd>
+                {% endfor %}
+            </dl>
+        {% endif %}
+
+        {# Offline usage #}
+        {% if html_download %}
+            <dl id="offline">
+                <dt>{% trans %}Offline usage{% endtrans %}</dt>
+                <dd><a href="{{ pathto(html_download, 1) }}">{{ _("Download") }}</a></dd>
+            </dl>
+        {% endif %}
+
+        {# Contribute #}
+        {% if github_page_link or (locales and 'translate' in locales[current_version]) %}
+            <dl>
+                <dt>{% trans %}Contribute{% endtrans %}</dt>
+                {% if github_page_link %}
+                    <dd><a href="{{ github_page_link() }}">{{ _("Source") }}</a></dd>
+                    <dd><a href="{{ github_page_link('edit') }}">{{ _("Edit") }}</a></dd>
+                {% endif %}
+                {% if locales and 'translate' in locales[current_version] %}
+                    <dd><a href="{{ page_link(language='translate') }}">{{ _("Translate") }}</a></dd>
+                {% endif %}
+            </dl>
+        {% endif %}
+    </div>
+</div>

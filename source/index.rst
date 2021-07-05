@@ -1,5 +1,5 @@
 ====================
-Sponge Documentation
+TabooLib Documentation
 ====================
 
 Introduction
@@ -33,7 +33,7 @@ or visit their repositories on GitHub:
     available for `download <https://www.spongepowered.org/downloads/>`_.
 
 Contents
-========
+======== 
 
 Creating a Server
 ~~~~~~~~~~~~~~~~~
@@ -114,22 +114,10 @@ goals.
 
     about/index
 
-Acknowledgements
-~~~~~~~~~~~~~~~~
-
-.. image:: /images/yklogo.png
-
-The SpongePowered team are grateful to *YourKit* for providing its full-featured Java Profiler free to open source
-projects. YourKit, LLC is the creator of `YourKit Java Profiler <https://www.yourkit.com/java/profiler/index.jsp>`_
-and `YourKit .NET Profiler <https://www.yourkit.com/.net/profiler/index.jsp>`_, innovative and intelligent tools
-for profiling Java and .NET applications.
-
-
-
 Links
-=====
+===== 
 
-.. toctree::
+.. toctree:: 
     :maxdepth: 2
     :titlesonly:
 
