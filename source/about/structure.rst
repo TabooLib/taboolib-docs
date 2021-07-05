@@ -1,0 +1,63 @@
+===================================
+The Structure of the Sponge Project
+===================================
+
+The Sponge Project consists of different subprojects, hosted in various repositories on GitHub. Here's a short overview
+before going into detail:
+
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| Project                                                           | Description                                           | What is done in the repository?                                               |
++===================================================================+=======================================================+===============================================================================+
+| `SpongeAPI <https://github.com/SpongePowered/SpongeAPI>`_         | The API itself                                        | Development of the API itself                                                 |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `SpongeForge <https://github.com/SpongePowered/SpongeForge>`_     | A SpongeAPI implementation built on top of Forge      | Development of the parts of SpongeForge which rely on Forge                   |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ | A SpongeAPI implementation built directly on top      | Development of the Vanilla Counterpart of the SpongeForge repository          |
+|                                                                   | of Vanilla Minecraft                                  |                                                                               |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_   | The shared code between SpongeForge and SpongeVanilla | Development of all code which is shared between SpongeForge and SpongeVanilla |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `Mixin <https://github.com/SpongePowered/Mixin>`_                 | The tool used to inject the implementations into      | Development of our solution to hook Sponge into the Minecraft server          |
+|                                                                   | the underlying code structure                         |                                                                               |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `SpongeDocs <https://github.com/SpongePowered/SpongeDocs>`_       | The official SpongeProject Documentation              | Expanding, fixing and writing the SpongeDocs                                  |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `SpongeHome <https://github.com/SpongePowered/SpongeHome>`_       | The website for the SpongeProject                     | Development of our website                                                    |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `Ore <https://github.com/SpongePowered/Ore>`_                     | Plugin hosting solution                               | Development of our plugin hosting solution                                    |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| `SpongeAuth <https://github.com/SpongePowered/SpongeAuth>`_       | The authentication portal and SSO for our websites    | Development of our authentication portal and SSO solution                     |
++-------------------------------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+
+SpongeCommon, SpongeForge and SpongeVanilla
+===========================================
+
+The SpongeCommon repository is the base which contains all code which is shared between the SpongeForge and SpongeVanilla
+implementation. The SpongeForge and SpongeVanilla repositories contain all code which can't be shared between them, as
+Forge requires some Forge specific things which won't work on Vanilla and vice versa.
+
+When you refer to the SpongeForge implementation, you're basically talking about everything contained in the
+SpongeCommon and SpongeForge repositories. The same applies for SpongeVanilla and SpongeCommon. This is the reason why
+building SpongeForge or SpongeVanilla from the repository *without* including SpongeCommon won't work.
+
+SpongeHome
+==========
+
+SpongeHome is the Sponge Project's website. It's written in Golang, using the go-macaron library. It uses SCSS as its
+CSS preprocessor.
+
+Ore
+===
+
+Ore is our very own plugin hosting solution. It's written in Scala, based on the Play Framework and of course open source!
+
+How everything is tied together
+===============================
+
+The image shows the various parts of the Sponge Implementations and how they interact with each other and their dependencies.
+On the left side is a typical SpongeForge setup with some SpongeAPI plugins, a Forge mod and a hybrid which uses Forge
+(as a mod) and Sponge (as a plugin) to interact. On the right side there's a typical SpongeVanilla setup. You'll notice
+that SpongeVanilla doesn't support Forge mods or the hybrid, because SpongeVanilla is missing the Forge functionality:
+
+.. image:: /images/contributing/SpongeProject-structure.svg
+    :alt: Repo Overview
