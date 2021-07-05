@@ -1,48 +1,12 @@
 ========================
-Installing a Text Editor
+安装文本编辑器
 ========================
 
-Articles on SpongeDocs are saved as text files in the `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ markup
-language. Although your operating system's default text editor is likely sufficient for editing these files, installing
-a different text editor may prove to be useful.
-
-Downloads
-=========
+TabooLibDocs 是基于一种叫做 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ 的标记语言书写，并以文本形式存储的。尽管系统自带的文本编辑器可能足够，但多装一个以防万一总没错。
 
 Visual Studio Code
 ~~~~~~~~~~~~~~~~~~
 
-VS Code is a cross platform, open source, code and text editor by Microsoft licensed under the MIT license. It is a popular
-choice used by many of Sponge's developers, for writing documentation and even for developing plugins. Unlike a regular text
-editor there is support for debugging, syntax highlighting, intelligent code completion, code refactoring, and more. There
-is also `Git support <https://code.visualstudio.com/docs/editor/versioncontrol>`_, a great plugin for 
-`reST support <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_, and even
-a plugin for `HOCON <https://marketplace.visualstudio.com/items?itemName=zzzz.hocon-colorizer>`_.
+VS Code 是一个开源的跨平台文本及源代码编辑器，由微软开发，在 MIT 许可证下发布。和一般的文本编辑器不同，VS Code 内建有调试、语法高亮、智能补全、代码重构等诸多功能。VS Code 自带 `Git 支持 <https://code.visualstudio.com/docs/editor/versioncontrol>`_，通过插件还可以支持 `reST <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_，甚至是 `HOCON <https://marketplace.visualstudio.com/items?itemName=zzzz.hocon-colorizer>`_。
 
-**VS Code** can be downloaded for free from https://code.visualstudio.com/.
-
-Atom
-~~~~
-
-Atom is an open-source text editor published under the MIT license. Atom has built-in support for projects stored in a
-Git repository, such as SpongeDocs. `This article <https://blog.atom.io/2014/03/13/git-integration.html>`_ goes more in
-depth about the features of Atom's Git integration. If you're interested in adding reST support to Atom, check out
-`this package <https://atom.io/packages/language-restructuredtext>`__.
-
-**Atom** can be downloaded for free from https://atom.io/.
-
-Notepad++
-~~~~~~~~~
-
-Notepad++ is, arguably, one of the most popular text editors.
-
-**Notepad++** can be downloaded for free from https://notepad-plus-plus.org/.
-
-Sublime Text
-~~~~~~~~~~~~
-
-Sublime Text is a multi-platform text editor, with quite a few useful features. It includes the ability to customize the
-look of the editor, create useful macros, and even includes a plugin API to make your editing even easier. Sublime Text
-provides both a free version and a paid version.
-
-**Sublime Text** can be downloaded for free from https://www.sublimetext.com/
+你可以在 https://code.visualstudio.com/ 免费下载。

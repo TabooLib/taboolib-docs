@@ -1,55 +1,30 @@
-====================
-TabooLib Documentation
-====================
+======================
+TabooLib 开发文档
+======================
 
-Introduction
-============
+前言
+========
 
-Welcome to SpongeDocs, the official documentation for the open-source `Sponge <https://www.spongepowered.org>`__ project.
+欢迎来到 TabooLibDocs。这里定义了基于 `TabooLib <https://github.com/TabooLib/TabooLib>`__ ``6.0`` 编写 Minecraft 插件而提供的指导性准则和建议。
 
-SpongeAPI is your all new plugin API for Minecraft: Java Edition. You can run it on a plain vanilla server (as
-SpongeVanilla) or on your fully modded MinecraftForge server (as SpongeForge). Check out our :doc:`versions/index` to 
-understand selecting a file and grab your copy from our `downloads page <https://www.spongepowered.org/downloads/>`_.
+TabooLib 是基于多种 Minecraft 服务端平台的插件开发框架，你可以在 **原生** 的 Bukkit 平台运行基于 TabooLib 编写的插件，同样这个插件也可以在 Sponge、Nukkit 等平台运行。你可以在 :doc:`这里 <versions/index>` 查看 TabooLib 的版本信息并下载 `SDK <https://github.com/taboolib/taboolib-sdk>`_ 快速开始。
 
-Not sure what you're looking for? Try our :doc:`about/index` section, which contains a short :doc:`about/introduction`,
-our :doc:`about/faq` and an article about :doc:`about/structure`.
+TabooLib 自 ``6.0`` 版本起不再是 **动态下载** 模式，而是改为由依赖插件自行打包并随本体同时载入的纯类库形式。这极大程度的提升了插件的稳定性和安全性，正因如此 TabooLib 的所有工具也在这个版本进行了全面重新设计。整个库被拆分为数个模块，由这些模块共同组成 TabooLib ``6.0``，你可以在 :doc:`这里 <about/structure>` 了解模块之间的结构与相关信息，或直接访问我们的 `Github <https://github.com/taboolib>`_ 仓库。
 
-Server owners should read our tips and instructions in :doc:`server/index` on how to install, run and maintain a Sponge
-based server.
-
-
-The Sponge project has several main components. Learn more about the project structure :doc:`here <about/structure>`
-or visit their repositories on GitHub:
-
-`SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
-`SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_ | `SpongeAPI <https://github.com/spongepowered/spongeapi>`_ |
-`SpongeDocs <https://github.com/spongepowered/spongedocs>`_ | `SpongeHome <https://github.com/SpongePowered/SpongeHome>`_ |
-`Mixin <https://github.com/SpongePowered/Mixin>`_ |  `Ore <https://github.com/SpongePowered/Ore>`_ | 
-`SpongeAuth <https://github.com/SpongePowered/SpongeAuth>`_ 
+本文档是基于 `SpongeDocs <https://docs.spongepowered.org>`_ 二次开发的离线版本。
 
 .. note::
 
-    Sponge development is ongoing. Stable and Experimental builds of both SpongeForge and SpongeVanilla are currently
-    available for `download <https://www.spongepowered.org/downloads/>`_.
+    TabooLib ``6.0`` 还在实验阶段，
+    我希望更多开发者能够加入我们，为我们提供有效建议和帮助。
 
-Contents
-======== 
+内容
+=======
 
-Creating a Server
-~~~~~~~~~~~~~~~~~
+版本信息
+~~~~~~~~
 
-This section is for users who have a Sponge server or are interested in creating one.
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    server/index
-
-Versioning Policy
-~~~~~~~~~~~~~~~~~
-
-This section describes how Sponge manages versions.
+这部分用于表示 TabooLib 如何控制各个版本，以及与旧版本之间的关系。
 
 .. toctree::
     :maxdepth: 2
@@ -57,11 +32,10 @@ This section describes how Sponge manages versions.
 
     versions/index
 
-Preparing for Development
-~~~~~~~~~~~~~~~~~~~~~~~~~
+准备工作
+~~~~~~~~
 
-Get yourself and your machine ready to develop Sponge itself or your own plugins! Please read this section before
-:doc:`plugin/index` and :doc:`contributing/index`.
+首先确保你的计算机已经联网！并在这部分后阅读 :doc:`plugin/index` 和 :doc:`contributing/index`。
 
 .. toctree::
     :maxdepth: 2
@@ -69,10 +43,10 @@ Get yourself and your machine ready to develop Sponge itself or your own plugins
 
     preparing/index
 
-Creating Plugins
-~~~~~~~~~~~~~~~~
+创造插件
+~~~~~~~~
 
-Need help and information while coding your plugin for SpongeAPI? Look no further!
+现在我们将开始编写基于 TabooLib 的跨平台 Minecraft 服务器插件。
 
 .. toctree::
     :maxdepth: 2
@@ -80,21 +54,10 @@ Need help and information while coding your plugin for SpongeAPI? Look no furthe
 
     plugin/index
 
-Ore
-~~~
+向 TabooLib 贡献代码
+~~~~~~~~~~~~~~~~~~~~
 
-Learn how to publish, install, browse, and use our Web API for our custom built plugin hosting solution, Ore.
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    ore/index
-
-Contributing to Sponge
-~~~~~~~~~~~~~~~~~~~~~~
-
-Look here if you want to help out in making Sponge better. Make Spongie proud!
+想让 TabooLib 变得更加优秀或是添加更多你想要的工具？
 
 .. toctree::
     :maxdepth: 2
@@ -102,11 +65,10 @@ Look here if you want to help out in making Sponge better. Make Spongie proud!
 
     contributing/index
 
-About Sponge
-~~~~~~~~~~~~
+关于 TabooLib 项目
+~~~~~~~~~~~~~~~~~~
 
-This section contains basic information about the project, read this if you're confused about Sponge, its parts, or our
-goals.
+这部分包含了 TabooLib 的基本信息，如果你感到对这个项目感到困惑可以看看这里。
 
 .. toctree::
     :maxdepth: 3
@@ -114,20 +76,17 @@ goals.
 
     about/index
 
-Links
-===== 
+链接
+====
 
 .. toctree:: 
     :maxdepth: 2
     :titlesonly:
 
--  `Sponge Homepage <https://www.spongepowered.org>`_
--  `Sponge Forums <https://forums.spongepowered.org>`_
--  `Sponge Discord <https://discord.gg/sponge>`_
--  `Sponge Downloads <https://www.spongepowered.org/downloads/>`_
--  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`_
--  `SpongeAPI Javadocs <https://jd.spongepowered.org>`_
--  `Sponge Twitter <https://twitter.com/SpongePowered>`_
--  `Sponge Subreddit <https://www.reddit.com/r/spongeproject>`_
--  `Sponge GitHub <https://github.com/SpongePowered>`_
--  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge>`_
+-  `TabooLib 我的世界中文论坛 <https://www.mcbbs.net/thread-773065-1-1.html>`_
+-  `TabooLib 仓库 <https://github.com/TabooLib>`_
+-  `TabooLib SDK <https://github.com/TabooLib/TabooLib-SDK>`_
+-  `TabooLib 问题反馈 <https://github.com/TabooLib/TabooLib/issues?q=>`_
+-  `TabooLib Javadocs <https://jd.tabooproject.org>`_
+-  `Sponge 主页 <https://www.spongepowered.org>`_
+-  `Sponge 文档 <https://docs.spongepowered.org>`_

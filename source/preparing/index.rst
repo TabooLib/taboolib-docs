@@ -1,10 +1,8 @@
-=========================
-Preparing for Development
-=========================
+========
+准备工作
+========
 
-The articles in this section explain how to set up your development environment.
-This is intended for developers who wish to develop plugins with SpongeAPI and for developers who wish to
-contribute to the Sponge project.
+这部分将解释如何部署你的开发环境，以及你在开发过程中需要用到的内容。
 
 Contents
 ========
@@ -17,3 +15,4 @@ Contents
     ide
     text
     git
+    gradle

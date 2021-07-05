@@ -31,7 +31,8 @@ needs_sphinx = '1.0'
 # jdlinker: To link Javadocs in the documentation
 # sphinx.ext.todo: Allows using TODO elements in the documentation
 # sphinx.ext.githubpages: Adds .nojekyll to the output directory
-extensions = ['theme', 'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
+extensions = ['theme', 
+            'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['.templates']
@@ -46,9 +47,9 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'Sponge'
-copyright = '2014-2021, Sponge Contributors'
-author = 'Sponge Contributors'
+project = 'TabooLib'
+copyright = '2017-2021, TabooLib Contributors'
+author = 'TabooLib Contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -92,7 +93,7 @@ gettext_compact = False
 # -- sphinx-JDLinker Configuration ----------------------------------------
 
 javadoc_links = {
-    'https://jd.spongepowered.org/%s/' % release: ['org.spongepowered.api'],
+    'https://jd.tabooproject.org/%s/' % release: ['taboolib'],
     'https://configurate.aoeu.xyz/apidocs/': ['ninja.leaping.configurate'],
     'https://docs.oracle.com/javase/8/docs/api/': ['java'],
     'https://google.github.io/guava/releases/17.0/api/docs/': ['com.google.common']

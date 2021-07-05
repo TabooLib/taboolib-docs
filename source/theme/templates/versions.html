@@ -1,22 +1,20 @@
-{% macro mark_current(compare, current) %}
-    {% if compare == current %}class="current"{% endif %}
-{% endmacro %}
+{% macro mark_current(compare, current) %} {% if compare == current %}class="current"{% endif %} {% endmacro %}
 
-{% macro language_flag(locale) %}
+<!-- {% macro language_flag(locale) %}
     <img src="{{ pathto('_static/flags/' + locale + '.svg', 1) }}"
          alt="{{ locale|language_code }}" title="{{ locale|language_display_name }}">
-{% endmacro %}
+{% endmacro %} -->
 
-<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-        <i class="fa fa-book"> <span>SpongeDocs</span></i>
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version">
+        <i class="fa fa-book"> <span>TabooLibDocs</span></i>
         v: {{ release }}
-        {% if language and language != 'translate' %}{{ language_flag(language) }}{% endif %}
+        <!-- {% if language and language != 'translate' %}{{ language_flag(language) }}{% endif %} -->
         <span class="fa fa-caret-down"></span>
     </span>
     <div id="versions" class="rst-other-versions">
 
-        {# Languages #}
+        <!-- {# Languages #}
         {% if locales[current_version] %}
             <dl id="languages">
                 <dt>{% trans %}Languages{% endtrans %}</dt>
@@ -26,10 +24,10 @@
                     {% endif %}
                 {% endfor %}
             </dl>
-        {% endif %}
+        {% endif %} -->
 
         {# Versions #}
-        {% if versions %}
+        <!-- {% if versions %}
             <dl>
                 <dt>{% trans %}Versions{% endtrans %}</dt>
                 {% for version in versions %}
@@ -66,6 +64,6 @@
                     <dd><a href="{{ page_link(language='translate') }}">{{ _("Translate") }}</a></dd>
                 {% endif %}
             </dl>
-        {% endif %}
+        {% endif %} -->
     </div>
 </div>

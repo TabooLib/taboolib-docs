@@ -1,114 +1,55 @@
-==========
-Versioning
-==========
-
-.. _sem-ver:
-
-.. tip::
-    Sponge follows a format of the SemVer specification in its projects. You can read about general SemVer usage at 
-    https://semver.org/.
-
-The SpongeAPI and implementations (SpongeForge/SpongeVanilla) follow two different policies. Understanding our versions 
-is a matter of interpreting the SemVer version string. The SpongeAPI version utilizes the *Major* and *Minor* parts in 
-the SemVer version string while the implementations use the *Major*, *Minor*, and *Patch* parts.
-
-API
-===
-
-Plugin developers create plugins for a particular SpongeAPI version, such as ``7.0``, ``7.3``, or ``7.9``, so the 
-plugin works with the features provided in that specific version. Versions are incremented to reflect added, removed, 
-or changed features. How the version number changes convey how plugins might be affected.
-
-Major
------
-
-A change in the Major number (**X**.Y.Z) indicates that changes broke some APIs that were guaranteed to work in the 
-previous version. Plugins *might* break with this kind of version change. For example, a plugin for version 6.9 *might* 
-not run with version 7.0.
-
-Minor
------
-
-A change in the Minor number (X. **Y**.Z) indicates that changes added some APIs, but plugins for previous minor 
-versions in the same major version are still guaranteed to work. For example, a plugin for version ``7.3`` will run 
-with version ``7.4`` or ``7.5``. However, the opposite is not *necessarily* the same. A plugin for version ``7.4`` is 
-not guaranteed to run with version ``7.3``. 
-
-.. note::
-
-    The *Minor* number is always reset to zero when the *Major* number changes.
-
-Examples of SpongeAPI version strings are ``spongeapi-7.1.0`` and ``spongeapi-7.2.0``. 
-
-Implementations
-===============
-
-The version string for the Sponge implementations includes the target Minecraft version as well as the SpongeAPI 
-version. The SpongeForge implementation also specifies the Forge **recommended version** with which it is guaranteed to 
-be compatible.
-
-Patch
------
-
-A change in the patch number (X.Y. **Z**) occurs with implementation builds. These builds contain bug fixes, 
-performance improvements, configuration changes, and other changes not related to the API. When a patch number is only 
-a number, this build is a **recommended version**. Any plugin developed for the SpongeAPI version in the string, or is  
-compatible with that version, is guaranteed to work.
-
-.. note::
-
-    The *Patch* number is always reset to zero when the *Minor* number changes.
-
-Examples of implementation version strings are ``spongevanilla-1.12.2-7.1.5`` and ``spongeforge-1.12.2-2768-7.1.5``. 
-
-.. warning::
-
-    Plugin developers may choose to develop their plugin for a particular implementation. The plugin's Ore page should 
-    note such decision with a tag by the version. Sponge makes no guarantee of a plugin's compatibility when marked as 
-    such.
-
-Recommended Version
-===================
-
-Recommended Versions are also known as Recommended Builds or Releases. They are versions of reasonable quality of which 
-the implementations can make full use of the functionality available in SpongeAPI, and plugins compatible with the API 
-are guaranteed to work as designed.
-
-.. warning::
-
-    The following information is for Sponge Developers. Plugin Developers and Server Administrators should only use 
-    **Recommended Versions** for development and server installations. Using a version that is not a recommended build 
-    introduces instability and nearly guarantees problems. We strongly discourage the use of non-recommended builds by 
-    Plugin Developers and Server Administrators.
-
-SNAPSHOT
+========
+版本规范
 ========
 
-A release which has the ``-SNAPSHOT`` label represents the next API version in development. For example, 
-``7.2.0-SNAPSHOT`` means ``7.2.0`` is in development. Another example is ``8.0.0-SNAPSHOT``, which means the next 
-*major* release (``8.0.0``) is in development. New features added in snapshots may break at any time. 
+.. tip::
+    TabooLib 的版本号使用一种符合语义化版本（SemVer）规范的格式。关于 SemVer 的一般用法可参考 https://semver.org/。
+
+插件开发者在开发插件时会选择基于某个特定的 TabooLib 版本，比如 ``6.0.0``、``6.0.1`` 或 ``6.1.0``。这如同使用 ``Guava``、``Apache`` 这些类库一般，TabooLib 的版本更新并不会影响插件本身，且一个服务端中也可以同时存在多个不同版本的 TabooLib。但是 TabooLib 版本的变化直接反映了特性的增删与修改，也反映了插件在更新 TabooLib 版本时的受影响程度。
+
+主版本号（MAJOR）
+---------------
+
+主版本号（**X** .Y.Z）的变化代表了 TabooLib 的当前框架和整体设计版本，以及 API 发生破坏性的更新。这可能会直接导致基于老 TabooLib 版本的插件无法在新版本上工作。数年进行一次迭代。
+
+次版本号（MINOR）
+---------------
+
+次版本号 (X. **Y** .Z) 的变化代表了新 API 和特性的出现，同时基于有相同主版本号的旧版 TabooLib 开发的插件可以直接提升 TabooLib 依赖版本。举个例子，某个基于 TabooLib ``6.0.0`` 开发的插件可以直接升级版本到 ``6.0.1`` 或 ``6.1.0``，但是不能反过来操作。
+
+TabooLib 版本号的例子 ``common:6.0.0`` and ``platform-bukkit:6.1.0``. 
+
+修订版本（PATCH）
+--------------
+
+修订版本 (X.Y. **Z**) 的变化代表了某个漏洞修复、优化、配置变更或某些细微的 API 新增。若修订号是一个单独的数字，则该版本是一个推荐版本。这个版本的变更除了重大漏洞修复外不会发生任何推送，且可能频繁发生。
 
 .. note::
 
-    If the minor version is zero (e.g., ``8.0-SNAPSHOT``), **anything** may break before it is released and plugins 
-    cannot expect stability. If the Minor version is greater than zero (e.g., ``7.2-SNAPSHOT``), anything up to the 
-    previous minor version is still guaranteed to work (in this case, ``7.1``). However, anything added since it **may 
-    break** and instability is likely.
+    次版本好变化时，修订号必然重置。
 
-    When the minor and patch numbers are zero, and the ``-SNAPSHOT`` label is attached, versions are ``bleeding`` 
-    builds for testing the next version of SpongeAPI only and may break at any time.
+TabooLib 版本号的例子 ``common:6.0.1`` and ``platform-bukkit:6.1.2-rc``. 
 
-    The ``-SNAPSHOT`` label on a SpongeCommon file means the implementation is nearly complete but is still not a 
-    stable release. More importantly, Gradle determines whether or not to append the *-RC{build number}* to the version 
-    string by the presence of the label.
+推荐版本
+--------
 
-Release Candidate
-=================
+推荐版本是指那些通过质量测试的稳定版本，可以完美利用当前版本 TabooLib 的所有功能。
 
-Any push made to GitHub which is not a *Recommended Build* is a *Release Candidate*.  It may become a recommended build 
-after further testing. There is also the possibility that a release candidate might not work correctly.
+.. warning::
 
-.. tip::
+    下列信息是给 TabooLib 开发者看的，开发者们应当使用推荐版本进行插件开发和测试。非推荐版本自身不稳定，使用这些版本等同于 “多少有毛病”。因此我们强烈推荐 TabooLib 开发者不要使用非推荐版本进行开发和测试。
 
-    *SNAPSHOT* appears in SpongeAPI and SpongeCommon version strings while *RC* appears in implementation version 
-    strings.
+候选（Release Candidate，RC）
+---------------------------
+
+所有推送到 GitHub 上的更新若不标注推荐版本，则代表候选版本，在经过进一步测试后它有可能会成为下一个推荐版本。候选版本也有可能不正常工作。
+
+快照（SNAPSHOT）
+--------------
+
+带有 ``-SNAPSHOT`` 标签的版本代表了正在开发中的下一个版本的快照版本。比方说 ``6.0.1-SNAPSHOT`` 代表了正在开发中的 ``6.0.1`` 版本。再比如 ``6.1.0-SNAPSHOT`` 代表了正在开发下一个主要更新 ``6.1.0``。快照版本中的新工具和特性随时可能被移除或发生变动。
+
+测试（TEST）
+----------
+
+带有 ``-test-{测试号}`` 标签的版本代表了正在开发中的下一个版本的内部测试版本。通常是用于内部人员分发测试的版本号，是极其不稳定的，甚至无法工作。可以在这个版本中看到即将开发完成的新的工具和特性。

@@ -1,10 +1,10 @@
-=================
-Versioning Policy
-=================
+=======
+版本信息
+=======
 
-This section describes how Sponge manages versions.
+这部分用于表示 TabooLib 如何控制各个版本，以及与旧版本之间的关系。
 
-Contents
+内容
 ========
 
 .. toctree::
@@ -12,5 +12,4 @@ Contents
     :titlesonly:
 
     versioning
-    filenames
-    legacy-versions
+    relation

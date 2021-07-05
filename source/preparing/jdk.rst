@@ -1,26 +1,22 @@
 ==================
-Installing the JDK
+安装 JDK
 ==================
 
-The Java Development Kit - also known as the JDK - is required in order to develop Sponge plugins and/or work on Sponge
-itself.
+Java Development Kit，又名 JDK，是开发 TabooLib 插件或 TabooLib 项目本身所必须的。
 
-Download
-========
+下载
+====
 
-Before installing the JDK, uninstall any older versions of Java that are present on your computer.
+在安装 JDK 之前，卸载电脑上所有旧版本的 Java。
 
 .. note::
 
-    Sponge contributors and Plugin authors must use JDK 8, as older versions of Java are no longer supported.
-    Be aware that some Minecraft servers have still not yet migrated to Java 8. To run Sponge and its plugins
-    properly you must update to Java 8, as Sponge won't run on older versions (i.e. Java 6 and 7).
+    TabooLib 贡献者以及插件作者必须使用 JDK 8，因其不支持旧版本 Java。请注意，某些高版本 Minecraft 可能需要更高的 JDK 版本，但是你同样可以使用 JDK 8 进行开发工作，若要使用高版本的 JDK 例如 JDK 16，那么你开发的插件将无法在低版本 Minecraft 服务器中运行，例如 Minecraft ``1.12.2``。以及 Java 7 是无法运行 TabooLib 的。
 
-Oracle provides free downloads of the Java Development Kit on their website. Ensure that you are installing the JDK
-(Java Development Kit), not the JRE (Java Runtime Environment). There is a difference between the two.
+甲骨文公司（Oracle）在其网站上提供了免费的 JDK 下载，确保你安装的是 JDK（Java Development Kit）而非 JRE（Java Runtime Environment）二者并不相同。
 
-* `Java Development Kit 8 <https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html>`__
+* `JDK 8 <https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html>`__
 
-As an open source alternative you can also download the JDK from `AdoptOpenJDK <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot>`__.
+你还可以从 `AdoptOpenJDK <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot>`__ 下载到开源的 JDK。
 
-Upon completion of the installation process, reboot your computer. The JDK should then be ready for use.
+等待安装程序结束后，重启电脑。JDK 环境即刻就绪。
