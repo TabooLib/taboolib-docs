@@ -23,3 +23,7 @@
     build
     env/index
     project/index
+    plugin-identifier
+    main
+    lifecycle
+    plugin-meta

@@ -1,70 +1,39 @@
 ======================
-Contributing to Sponge
+向 TabooLib 贡献代码
 ======================
 
-This section shows you how to get involved with Sponge.
+想让 TabooLib 变得更加优秀或是添加更多你想要的工具？
 
-What are the projects I can help with?
-======================================
+有什么是我可以帮忙的？
+====================
 
-The Sponge Project and its parts are maintained on `GitHub <https://github.com/spongepowered>`_. If you're unfamiliar
-with GitHub and the tool git, then take a look at :doc:`howtogit` first. A read of our :doc:`guidelines` is strongly
-advised before starting any work. There are several projects we're currently maintaining:
+TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 上维护。如果你对 GitHub 和其对应的工具 Git 不太熟悉，可以先考虑看看 :doc:`howtogit`。不过在你开始之前我们强烈建议你阅读 :doc:`guidelines`。
 
-* SpongeAPI
-* SpongeForge
-* SpongeVanilla
-* SpongeCommon
-* Mixin
-* SpongeDocs
-* Ore
+业余者
+~~~~~~~~
 
-If you want to know more about the structure of the project and how everything is tied together, head over to
-:doc:`/about/structure`.
+几乎每个人都可以完成的工作，你不需要会 Java 或是 Koltin 等编程语言。
 
-What kind of help is needed?
-============================
+* 测试基于 TabooLib 运行的任何插件中因 TabooLib 所产生的问题。
+* 为 TabooLib 提供多种环境的测试并报告你遇到的任何问题。
+* 提出帮助 TabooLib 改进的宝贵意见。
+* 检查文档中的错别字。🤣
 
-Basic contributions
-~~~~~~~~~~~~~~~~~~~
+向 `TabooLib 问题追踪 <https://github.com/taboolib/taboolib/issues>`_ 汇报，或是加入我们的讨论群：**809083692**。
 
-This can be done by almost everyone. You don't need to know a programming language like Java or Python to:
+专业者
+~~~~~~~~
 
-* test SpongeForge or SpongeVanilla and report bugs or usage quirks
-* report or suggest any errors, faults or bugs you encounter
-* post suggestions or idea you have which would make Sponge better
+你应该至少拥有 Java 或是 Kotlin 等的编程语言基础知识才能帮助我们完成以下工作。
 
-Reporting bugs best via our `GitHub repositories <https://github.com/spongepowered/>`_, suggestions fit onto our
-`forums <https://forums.spongepowered.org/>`_. Just have a look at our
-:doc:`Bug Reporting page </server/spongineer/bugreport>` for further instructions.
+* 帮助我们修复漏洞。
+* 帮助我们完成多平台兼容工作。
+* 提交新的工具或是对现有工具进行升级改造。
+* :doc:`doc`。👍
 
-Intermediate Contributions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+我们的项目均在 `Github <https://github.com/taboolib>`_ 上托管。
 
-You should at least have basic knowledge of Java, Python or reST to help out on the following tasks:
-
-* help fixing bugs
-* finish the implementation of the API (SpongeForge and SpongeVanilla)
-* :doc:`help writing the SpongeDocs <spongedocs>`
-* help `translate the Docs on Crowdin <https://crowdin.com/project/sponge-docs>`_
-* help out developing Ore
-
-The development of the `SpongeAPI <https://github.com/spongepowered/SpongeAPI>`_,
-`SpongeForge <https://github.com/spongepowered/SpongeForge>`_,
-`SpongeVanilla <https://github.com/spongepowered/SpongeVanilla>`_ and `Ore <https://github.com/spongepowered/Ore>`_ as
-well as the `SpongeDocs <https://github.com/spongepowered/SpongeDocs>`_ is done in several repositories hosted on GitHub.
-
-Advanced Contributions
-~~~~~~~~~~~~~~~~~~~~~~
-
-And finally, these are the most difficult things you can help out with. Advanced knowledge of Java, Minecraft and at
-least basic knowledge of the `SpongeAPI <https://github.com/spongepowered/SpongeAPI>`_ and its
-`structure <https://jd.spongepowered.org>`_ is strongly advised before attempting to help out with:
-
-* adding functionality to the API (:doc:`implementation/pr`)
-* implementing advanced API functionality in the implementations
-
-Contents
+内容
 ========
 
 .. toctree::
@@ -73,7 +42,4 @@ Contents
 
     guidelines
     howtogit
-    implementation/index
-    spongedocs
-    porting
-    versioning
+    doc
