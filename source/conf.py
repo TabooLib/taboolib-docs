@@ -14,8 +14,10 @@
 # serve to show the default.
 
 import sys, os
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-sys.path.append(os.path.abspath('./theme'))
+# sys.path.append(os.path.abspath('./theme'))
 
 # -- General configuration ------------------------------------------------
 
@@ -31,8 +33,7 @@ needs_sphinx = '1.0'
 # jdlinker: To link Javadocs in the documentation
 # sphinx.ext.todo: Allows using TODO elements in the documentation
 # sphinx.ext.githubpages: Adds .nojekyll to the output directory
-extensions = ['theme', 
-            'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
+extensions = ['theme', 'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['.templates']
