@@ -2,14 +2,8 @@ name: main
 
 on: [push]
 
-env:
-  REGISTRY: docker-registry.spongepowered.org
-  REGISTRY_USER: ${{ secrets.SPONGE_MAVEN_REPO_USER }}
-  REGISTRY_PASSWORD: ${{ secrets.SPONGE_MAVEN_REPO_PASSWORD }}
-  IMAGE_NAME: spongedocs
-
 jobs:
-  build-n-upload-translations:
+  build-upload:
     runs-on: ubuntu-latest
 
     outputs:
@@ -18,32 +12,41 @@ jobs:
       versions: ${{ steps.variables.outputs.versions }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Cache pip dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
+      - name: Cache pip dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-    - name: Setup Python 3.x
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.x
+      - name: Setup Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
 
-    - name: Install Python dependencies
-      run: |
+      - name: Install Python dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-    - name: Build
-      run: sphinx-build -d build/doctrees source build/html
+      - name: Build
+        run: sphinx-build -d build/doctrees source build/html
 
-    - name: Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: Artifacts
-        path: build
+      - name: Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: ./
+
+      - name: setup jdk 8.0
+        uses: actions/setup-java@v2
+        with:
+          distribution: adopt
+          java-version: 8.0
+
+      # - name: Upload
+      #   run: java -jar uploader.jar ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
