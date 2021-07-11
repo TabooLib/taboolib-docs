@@ -13,13 +13,15 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+from posixpath import realpath
 import sys, os
 from os.path import abspath, join, dirname
 
 print(__file__)
 print(dirname(__file__))
 print(abspath(dirname(__file__)))
-sys.path.insert(0, join(abspath(dirname(__file__)), 'theme'))
+
+sys.path.append(realpath('/home/runner/work/TabooLibDocs/TabooLibDocs/source/theme'))
 
 # -- General configuration ------------------------------------------------
 
