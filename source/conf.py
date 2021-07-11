@@ -41,7 +41,7 @@ needs_sphinx = '1.0'
 # sphinx.ext.githubpages: Adds .nojekyll to the output directory
 extensions = ['theme', 'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
 
-html_theme = "theme"
+# html_theme = 'theme'
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['.templates']
