@@ -14,13 +14,7 @@
 # serve to show the default.
 
 from posixpath import realpath
-import sys, os
-from os.path import abspath, join, dirname
-
-print(__file__)
-print(dirname(__file__))
-print(abspath(dirname(__file__)))
-
+import sys
 sys.path.append(realpath('/home/runner/work/TabooLibDocs/TabooLibDocs/source/theme'))
 
 import theme
