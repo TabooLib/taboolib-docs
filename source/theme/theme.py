@@ -6,7 +6,7 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.util import logging
 from sphinx.util.osutil import copyfile
 
-from . import __version__
+# from . import __version__
 from .context import setup_html_context
 
 PACKAGE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -116,7 +116,7 @@ def setup(app):
     app.connect('build-finished', finish)
 
     return {
-        'version': __version__,
+        'version': '1',
         'parallel_read_safe': True,
         'parallel_write_safe': True
     }
