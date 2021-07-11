@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Artifacts
-          path: ./
+          path: build
 
       - name: setup jdk 8.0
         uses: actions/setup-java@v2
@@ -48,5 +48,5 @@ jobs:
           distribution: adopt
           java-version: 8.0
 
-      # - name: Upload
-      #   run: java -jar uploader.jar ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
+      - name: Upload
+        run: java -jar uploader.jar build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
