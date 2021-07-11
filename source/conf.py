@@ -37,7 +37,7 @@ needs_sphinx = '1.0'
 # jdlinker: To link Javadocs in the documentation
 # sphinx.ext.todo: Allows using TODO elements in the documentation
 # sphinx.ext.githubpages: Adds .nojekyll to the output directory
-extensions = ['theme', 'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
+extensions = ['jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['.templates']
