@@ -14,10 +14,12 @@
 # serve to show the default.
 
 import sys, os
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# from pathlib import Path
+# sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 
-# sys.path.append(os.path.abspath('./theme'))
+sys.path.append(os.path.abspath('./theme'))
+sys.path.append(os.path.abspath('theme'))
 
 # -- General configuration ------------------------------------------------
 
