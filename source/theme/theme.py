@@ -7,7 +7,7 @@ from sphinx.util import logging
 from sphinx.util.osutil import copyfile
 
 # from . import __version__
-# from .context import setup_html_context
+from context import setup_html_context
 
 PACKAGE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -100,7 +100,7 @@ def setup(app):
     app.config.html_theme = 'sphinx_rtd_theme'
 
     # Setup HTML context
-    # app.config.html_context = setup_html_context()
+    app.config.html_context = setup_html_context()
 
     # Set HTML static path and favicon
     app.config.html_static_path = [os.path.join(PACKAGE_DIR, 'static')]
