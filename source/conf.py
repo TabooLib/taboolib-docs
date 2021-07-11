@@ -23,6 +23,8 @@ print(abspath(dirname(__file__)))
 
 sys.path.append(realpath('/home/runner/work/TabooLibDocs/TabooLibDocs/source/theme'))
 
+import theme
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -37,7 +39,9 @@ needs_sphinx = '1.0'
 # jdlinker: To link Javadocs in the documentation
 # sphinx.ext.todo: Allows using TODO elements in the documentation
 # sphinx.ext.githubpages: Adds .nojekyll to the output directory
-extensions = ['jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
+extensions = ['theme', 'jdlinker', 'sphinx.ext.todo', 'sphinx.ext.githubpages']
+
+html_theme = "theme"
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['.templates']
