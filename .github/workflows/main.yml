@@ -59,10 +59,12 @@ jobs:
       #     # remoteDir: "build/html/index.html"
       #     options: "--delete --asci"
 
-      - name: init
+      - name: init1
         run: sudo apt-get install lftp
-      - name: init
-        run: sudo chmod 777 /home/runner/work/TabooLibDocs/TabooLibDocs/build
+      - name: init2
+        run: sudo chmod 755 /home/runner/work/TabooLibDocs/TabooLibDocs/build
+      - name: init3
+        run: ls -ld /home/runner/work/TabooLibDocs/TabooLibDocs/build
 
       - name: Upload ftp
         run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ /home/runner/work/TabooLibDocs/TabooLibDocs/build .; exit"
