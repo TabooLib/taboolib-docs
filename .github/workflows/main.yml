@@ -44,7 +44,7 @@ jobs:
           host: ${{ secrets.FTP_URL }}
           username: root
           password: ${{ secrets.SSH_PASSWORD }}
-
+ 
       # - name: Artifacts
       #   uses: actions/upload-artifact@v2
       #   with:
