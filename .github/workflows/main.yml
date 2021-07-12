@@ -61,6 +61,8 @@ jobs:
 
       - name: init
         run: sudo apt-get install lftp
+      - name: init
+        run: sudo chmod 777 /home/runner/work/TabooLibDocs/TabooLibDocs/build
 
       - name: Upload ftp
         run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ /home/runner/work/TabooLibDocs/TabooLibDocs/build .; exit"
