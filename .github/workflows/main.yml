@@ -47,6 +47,9 @@ jobs:
         with:
           distribution: adopt
           java-version: 8.0
+      
+      - name: Test
+        run: ping ${{ secrets.FTP_URL }}
 
       - name: Upload
         run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
