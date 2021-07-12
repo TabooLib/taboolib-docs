@@ -61,9 +61,12 @@ jobs:
 
       - name: init
         run: sudo apt-get install lftp
- 
+
       - name: Upload ftp
-        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
+        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }}
+ 
+      # - name: Upload ftp
+      #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
 
       # - name: Upload
       #   run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
