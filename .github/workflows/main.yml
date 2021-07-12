@@ -36,11 +36,11 @@ jobs:
       - name: Build
         run: sphinx-build -d build/doctrees source build/html
 
-      - name: Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: Artifacts
-          path: build
+      # - name: Artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: Artifacts
+      #     path: build
 
       # - name: setup jdk 8.0
       #   uses: actions/setup-java@v2
@@ -51,11 +51,11 @@ jobs:
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
-          host: ftp://${{ secrets.FTP_URL }}:21
+          host: ${{ secrets.FTP_URL }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "build"
-          remoteDir: "build"
+          localDir: "build/html/index.html"
+          # remoteDir: "build/html/index.html"
           # options: "--delete --asci"
 
       # - name: Upload
