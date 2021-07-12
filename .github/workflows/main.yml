@@ -63,7 +63,7 @@ jobs:
         run: sudo apt-get install lftp
 
       - name: Upload ftp
-        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }}
+        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "mirror --continue -x ^\.git/$ build .; quit"
  
       # - name: Upload ftp
       #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
