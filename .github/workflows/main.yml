@@ -55,8 +55,9 @@ jobs:
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "./build/html"
+          forceSsl: true
           # remoteDir: "build/html/index.html"
-          # options: "--delete --asci"
+          options: "--delete --asci"
 
       # - name: Upload
       #   run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
