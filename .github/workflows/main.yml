@@ -48,16 +48,19 @@ jobs:
       #     distribution: adopt
       #     java-version: 8.0
       
+      # - name: Upload ftp
+      #   uses: sebastianpopp/ftp-action@releases/v2
+      #   with:
+      #     host: ${{ secrets.FTP_URL }}
+      #     user: ${{ secrets.FTP_USER }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     localDir: "./build/html"
+      #     forceSsl: true
+      #     # remoteDir: "build/html/index.html"
+      #     options: "--delete --asci"
+
       - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
-        with:
-          host: ${{ secrets.FTP_URL }}
-          user: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "./build/html"
-          forceSsl: true
-          # remoteDir: "build/html/index.html"
-          options: "--delete --asci"
+        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
 
       # - name: Upload
       #   run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
