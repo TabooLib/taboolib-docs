@@ -62,16 +62,12 @@ jobs:
       - name: init1
         run: sudo apt-get install lftp
       - name: init2
-        run: sudo chmod 755 /home/runner/work/TabooLibDocs/TabooLibDocs/build
-      - name: init3
-        run: ls -l /home/runner/work/TabooLibDocs
-      - name: init4
-        run: ls -l /home/runner/work/TabooLibDocs/TabooLibDocs
+        run: sudo chmod 755 /home/runner/work/TabooLibDocs/TabooLibDocs/build/html
       - name: init5
-        run: ls -l /home/runner/work/TabooLibDocs/TabooLibDocs/build
+        run: ls -l /home/runner/work/TabooLibDocs/TabooLibDocs/build/html; cd /home/runner/work/TabooLibDocs/TabooLibDocs/build
 
       - name: Upload ftp
-        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ /home/runner/work/TabooLibDocs/TabooLibDocs/build .; exit"
+        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ html .; exit"
  
       # - name: Upload ftp
       #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
