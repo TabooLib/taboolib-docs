@@ -42,11 +42,11 @@ jobs:
           name: Artifacts
           path: build
 
-      - name: setup jdk 8.0
-        uses: actions/setup-java@v2
-        with:
-          distribution: adopt
-          java-version: 8.0
+      # - name: setup jdk 8.0
+      #   uses: actions/setup-java@v2
+      #   with:
+      #     distribution: adopt
+      #     java-version: 8.0
       
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
@@ -55,8 +55,8 @@ jobs:
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "build"
-          # remoteDir: "www"
-          options: "--delete --asci"
+          remoteDir: "build"
+          # options: "--delete --asci"
 
       # - name: Upload
       #   run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
