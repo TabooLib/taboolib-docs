@@ -54,7 +54,7 @@ jobs:
           host: ${{ secrets.FTP_URL }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "build/html/index.html"
+          localDir: "./build/html"
           # remoteDir: "build/html/index.html"
           # options: "--delete --asci"
 
