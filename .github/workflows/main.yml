@@ -39,8 +39,8 @@ jobs:
       - name: Copy folder content recursively to remote
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: build
-          remote: build
+          local: build/html
+          remote: ${{ secrets.FTP_DIR }}
           host: ${{ secrets.FTP_URL }}
           username: root
           password: ${{ secrets.SSH_PASSWORD }}
