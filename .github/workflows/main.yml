@@ -64,11 +64,11 @@ jobs:
       - name: init2
         run: sudo chmod 755 /home/runner/work/TabooLibDocs/TabooLibDocs/build
       - name: init3
-        run: ls -ld /home/runner/work/TabooLibDocs
+        run: ls -l /home/runner/work/TabooLibDocs
       - name: init4
-        run: ls -ld /home/runner/work/TabooLibDocs/TabooLibDocs
+        run: ls -l /home/runner/work/TabooLibDocs/TabooLibDocs
       - name: init5
-        run: ls -ld /home/runner/work/TabooLibDocs/TabooLibDocs/build
+        run: ls -l /home/runner/work/TabooLibDocs/TabooLibDocs/build
 
       - name: Upload ftp
         run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ /home/runner/work/TabooLibDocs/TabooLibDocs/build .; exit"
