@@ -70,10 +70,10 @@ jobs:
       #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ . .; exit"
 
       - name: Upload ftp
-        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "mirror --delete --only-newer --verbose /home/runner/work/TabooLibDocs/TabooLibDocs/build/html .; exit"
+        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --delete --only-newer --verbose /home/runner/work/TabooLibDocs/TabooLibDocs/build/html .; exit"
 
-      - name: Upload ftp
-        run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --delete --verbose . .; exit"
+      # - name: Upload ftp
+      #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --delete --verbose . .; exit"
  
       # - name: Upload ftp
       #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
