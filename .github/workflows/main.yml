@@ -36,7 +36,7 @@ jobs:
       - name: Build
         run: sphinx-build -d build/doctrees source build/html
 
-      - name: Copy folder content recursively to remote
+      - name: Upload with ssh-copy
         uses: garygrossgarten/github-action-scp@release
         with:
           local: build/html
@@ -45,47 +45,8 @@ jobs:
           username: root
           password: ${{ secrets.SSH_PASSWORD }}
  
-      # - name: Artifacts
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Artifacts
-      #     path: build
-
-      # - name: setup jdk 8.0
-      #   uses: actions/setup-java@v2
-      #   with:
-      #     distribution: adopt
-      #     java-version: 8.0
-      
-      # - name: Upload ftp
-      #   uses: sebastianpopp/ftp-action@releases/v2
-      #   with:
-      #     host: ${{ secrets.FTP_URL }}
-      #     user: ${{ secrets.FTP_USER }}
-      #     password: ${{ secrets.FTP_PASSWORD }}
-      #     localDir: "./build/html"
-      #     forceSsl: true
-      #     # remoteDir: "build/html/index.html"
-      #     options: "--delete --asci"
-
-      # - name: init1
-      #   run: sudo apt-get install lftp
-      # - name: init2
-      #   run: sudo chmod 755 /home/runner/work/TabooLibDocs/TabooLibDocs/build/html
-      # - name: init5
-      #   run: ls -l /home/runner/work/TabooLibDocs/TabooLibDocs/build/html; cd /home/runner/work/TabooLibDocs/TabooLibDocs/build/html
-
-      # - name: Upload ftp
-      #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --continue -x ^\.git/$ . .; exit"
-
-      # - name: Upload ftp
-      #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --delete --only-newer --verbose /home/runner/work/TabooLibDocs/TabooLibDocs/build/html .; exit"
-
-      # - name: Upload ftp
-      #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate false; mirror --delete --verbose . .; exit"
- 
-      # - name: Upload ftp
-      #   run: lftp ftp://${{ secrets.FTP_URL }}:21 -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-force true; set ssl:verify-certificate false; mirror --delete --reverse --continue --dereference -x ^\.git/$ build .; quit"
-
-      # - name: Upload
-      #   run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
+      - name: Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: build
