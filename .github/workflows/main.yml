@@ -51,7 +51,7 @@ jobs:
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
-          host: ftp://${{ secrets.FTP_SERVER }}:21
+          host: ftp://${{ secrets.FTP_URL }}:21
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "build"
