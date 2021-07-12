@@ -48,8 +48,15 @@ jobs:
           distribution: adopt
           java-version: 8.0
       
-      - name: Test
-        run: ping ${{ secrets.FTP_URL }}
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ftp://${{ secrets.FTP_SERVER }}:21
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "build"
+          # remoteDir: "www"
+          options: "--delete --asci"
 
-      - name: Upload
-        run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
+      # - name: Upload
+      #   run: java -jar uploader.jar ./build/html ${{ secrets.FTP_URL }} ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
