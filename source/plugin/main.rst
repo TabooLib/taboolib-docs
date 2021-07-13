@@ -42,7 +42,7 @@ Oracle `推荐 <https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.
     object ExamplePlugin : Plugin() {
 
         override fun onEnable() {
-            // 跨平台日志打印方法
+            // 通用日志方法
             info("Successfully running ExamplePlugin!")
         }
     }
