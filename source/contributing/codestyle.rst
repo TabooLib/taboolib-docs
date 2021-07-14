@@ -21,6 +21,16 @@
 
 .. code-block:: kotlin
 
+    package io.github.username.project
+
+    import taboolib.common.platform.Plugin
+
+    object ExamplePlugin : Plugin() {
+
+    }
+
+.. code-block:: kotlin
+
     package io.izzel.taboolib.example;
 
     import java.util.*
