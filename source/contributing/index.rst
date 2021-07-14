@@ -43,3 +43,4 @@ TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 
     guidelines
     howtogit
     doc
+    codestyle
