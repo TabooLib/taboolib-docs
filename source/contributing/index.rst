@@ -5,7 +5,7 @@
 想让 TabooLib 变得更加优秀或是添加更多你想要的工具？
 
 有什么是我可以帮忙的？
-====================
+=====================
 
 TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 上维护。如果你对 GitHub 和其对应的工具 Git 不太熟悉，可以先考虑看看 :doc:`howtogit`。不过在你开始之前我们强烈建议你阅读 :doc:`guidelines`。
 
@@ -44,3 +44,4 @@ TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 
     howtogit
     doc
     codestyle
+    testenv
