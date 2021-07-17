@@ -43,3 +43,5 @@ TabooLib Test Units
 .. code-block:: bash
     
     ./gradlew build
+
+使用 ``/build/libs/TabooLib_6_0_0_7_Test_Units-1.0.0-all.jar`` 文件在服务器中进行测试。
