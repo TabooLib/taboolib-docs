@@ -5,17 +5,25 @@
 我们遵循 Jetbrains 的 `Kotlin 风格指南 <https://kotlinlang.org/docs/coding-conventions.html#names-for-test-methods>`_，但存在少许修改。
 
 * 列宽
+
   * 修改 ``Hard wrap`` 为 160 字符
   * 能提高可读性时可自由换行
+
 * 缩进
+
   * 使用4个空格，而不是2个空格或1个Tab
+
 * 空行
-  * 在每个类、接口、枚举等的第一个成员前（例如在 ``class Example`` { 之后）和最后一个成员后放置一个空行
+
+  * 在每个文件（类、接口等）中的第一个成员前和最后一个成员后放置一个空行
+  * **不要写的太挤，也不要空太多行**
+
 * 异常
+
   * 对于被忽略的异常，需将异常变量命名为 ``ignored``
 
 尽管我们强烈建议你阅读 Kotlin 风格指南，但是它们实在是太长了。为了帮助你快速开始，下面是一个格式正确的代码样例：
-
+        
 .. code-block:: kotlin
 
     package io.izzel.taboolib.example;
@@ -32,12 +40,7 @@
     */
     class Example(private val base: String) {
 
-        private val random: Random
-
-        init {
-            this.random = ThreadLocalRandom.current()
-            this.random.setSeed(SEED)
-        }
+        private val random = ThreadLocalRandom.current()
 
         /**
         * Generates and returns an ID using the base string specified on creation
@@ -75,9 +78,5 @@
         fun generateId(backup: Int): String {
             return generateId(null) ?: "$base - $backup"
         }
-
-        companion object {
-
-            const val SEED = 4815162342L;
-        }
     }
+
