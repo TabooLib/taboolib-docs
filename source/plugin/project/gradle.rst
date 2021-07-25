@@ -10,8 +10,10 @@
 
     plugins {
         id 'java'
-        id 'io.izzel.taboolib' version '1.9' // 不可低于这个版本
-        id 'org.jetbrains.kotlin.jvm' version '1.5.10' // 基于 TabooLib Runtime Env 你可以使用任何版本的 Kotlin 环境
+        // 不可低于 1.9 版本
+        id 'io.izzel.taboolib' version '1.9'
+        // 基于 TabooLib Runtime Env 你可以使用任何版本的 Kotlin 环境
+        id 'org.jetbrains.kotlin.jvm' version '1.5.10'
     }
 
     group = 'com.example'
@@ -51,7 +53,8 @@
                 name '坏黑' description 'TabooLib Developer'
             }
             dependencies {
-                name 'Adyeshach'
+                name 'Chemdah'
+                name 'Adyeshach' optional true
             }
         }
     }
