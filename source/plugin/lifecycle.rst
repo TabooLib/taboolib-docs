@@ -21,7 +21,7 @@
 
 .. csv-table::
    :header: "平台", "对应"
-   :widths: 1, 1
+   :widths: 1, 2
    
    "nukkit, nukkit, bungee", "对应原 ``onLoad()`` 方法"
    "sponge-api7", "对应原 ``GamePreInitializationEvent`` 事件"
@@ -35,7 +35,7 @@
 
 .. csv-table::
    :header: "平台", "对应"
-   :widths: 1, 1
+   :widths: 1, 2
    
    "nukkit, nukkit, bungee", "对应原 ``onEnable()`` 方法"
    "sponge-api7", "对应原 ``GameInitializationEvent`` 事件"
@@ -48,7 +48,7 @@
 
 .. csv-table::
    :header: "平台", "对应"
-   :widths: 1, 1
+   :widths: 1, 2
    
    "nukkit, nukkit, bungee, velocity", "对应调度器开始执行时"
    "sponge-api7", "对应原 ``GameStartedServerEvent`` 事件"
@@ -60,7 +60,7 @@
 
 .. csv-table::
    :header: "平台", "对应"
-   :widths: 1, 1
+   :widths: 1, 2
    
    "nukkit, nukkit, bungee", "对应原 ``onDisable()`` 方法"
    "sponge-api7", "对应原 ``GameStoppedServerEvent`` 事件"
