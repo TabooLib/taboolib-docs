@@ -41,7 +41,7 @@
 
 .. note::
 
-    插件的 :doc:`plugin-identifier` 在 ``settings.gradle`` 文件中设置。
+    插件的 :doc:`identifier` 在 ``settings.gradle`` 文件中设置。
 
 你可以在 ``taboolib`` 选项中安装所需要的 :doc:`module` 和设置 TabooLib 版本。或是针对 :doc:`/plugin/plugin-meta` 进行更详细的设置。例如这这样修改可以添加在 ``Bukkit`` 平台运行所需的插件依赖。
 
