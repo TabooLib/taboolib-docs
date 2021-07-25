@@ -24,6 +24,7 @@
     env/index
     project/index
     plugin-identifier
+    plugin-meta
     main
     lifecycle
-    plugin-meta
+    inject
