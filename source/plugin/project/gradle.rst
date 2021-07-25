@@ -10,20 +10,22 @@
 
     plugins {
         id 'java'
-        id 'io.izzel.taboolib' version '1.7'
-        id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+        id 'io.izzel.taboolib' version '1.9' // 不可低于这个版本
+        id 'org.jetbrains.kotlin.jvm' version '1.5.10' // 基于 TabooLib Runtime Env 你可以使用任何版本的 Kotlin 环境
     }
 
     group = 'com.example'
     version = '1.0.0-SNAPSHOT'
 
     taboolib {
-        descriptionFile {
-            author '坏黑'
+        description {
+            contributors {
+                name '坏黑' description 'TabooLib Developer'
+            }
         }
         install 'common'
         install 'platform-bukkit'
-        version '6.0.0'
+        version '6.0.0-es1'
     }
 
     repositories {
@@ -44,8 +46,12 @@
 .. code-block:: groovy
 
     taboolib {
-        descriptionFile {
-            author '坏黑'
-            depend 'Adyeshach'
+        description {
+            contributors {
+                name '坏黑' description 'TabooLib Developer'
+            }
+            dependencies {
+                name 'Adyeshach'
+            }
         }
     }
