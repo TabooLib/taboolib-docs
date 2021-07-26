@@ -26,7 +26,7 @@
 
 .. csv-table::
    :header: "名称", "身份", "最后活跃版本"
-   :widths: 1, 2
+   :widths: 1, 2, 1
    
    "ElaBosak233", "开发者", "5.0"
    "Glom-c", "开发者", "5.0"
