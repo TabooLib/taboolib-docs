@@ -7,7 +7,7 @@
 有什么是我可以帮忙的？
 =====================
 
-TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 上维护。如果你对 GitHub 和其对应的工具 Git 不太熟悉，可以先考虑看看 :doc:`howtogit`。不过在你开始之前我们强烈建议你阅读 :doc:`guidelines`。
+TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 上维护。看看下面的内容，有什么你可以帮上忙的。
 
 业余者
 ~~~~~~~~
@@ -40,8 +40,6 @@ TabooLib 项目和它的所有部分在 `GitHub <https://github.com/taboolib>`_ 
     :maxdepth: 2
     :titlesonly:
 
-    guidelines
-    howtogit
-    doc
     codestyle
+    doc
     testenv

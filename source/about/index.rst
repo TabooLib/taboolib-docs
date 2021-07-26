@@ -11,4 +11,6 @@
     :maxdepth: 2
     :titlesonly:
 
+    info
     structure
+    staff

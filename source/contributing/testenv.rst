@@ -2,40 +2,30 @@
 搭建 TabooLib 测试环境
 =======================
 
-TabooLib
-==========
+在向 TabooLib 贡献代码的过程中我们经常需要进行本地测试，但是我们不能将测试版本发布到 TabooLib 远程仓库。所以我们需要搭建本地测试环境，并向发布到本地以供我们后续测试时使用。
 
-从 `TabooLib 仓库 <https://github.com/Bkm016/TabooLib>`_ 中克隆完整项目在你的工作环境中。将 ``build.gradle.kts`` 构建文件中的发布仓库地址改为你的 **本地仓库** 或是 **任意本地目录** 如下所示。
+从 `TabooLib 仓库 <https://github.com/Bkm016/TabooLib>`_ 中克隆完整项目在你的工作环境中。将 ``build.gradle.kts`` 构建文件中的发布仓库地址改为你的 **本地仓库** 如下所示。
 
 .. code-block:: kotlin
 
     publishing {
         repositories {
-            maven {
-                url = uri("/Users/sky/Desktop/repo")
-            }
+            mavenLocal()
         }
     }
 
-随后输入以下命令完成构建及本地发布。
+随后输入以下命令完成构建及本地发布。不过不要忘记修改版本号，不能是已经发布的版本。
 
 .. code-block:: bash
 
     ./gradlew build publish
 
-
-TabooLib Test Units
-=====================
-
-从 `TabooLib Test Units 仓库 <https://github.com/Bkm016/TabooLib-Test-Units>`_ 中克隆测试项目在你的工作环境中。将 ``build.gradle`` 构建文件中的仓库地址改为你的刚才设置的地址，如下所示。
+届时你便可以在你的测试项目中添加 **本地仓库** 来获取刚才发布的 TabooLib 版本。
 
 .. code-block:: groovy
 
     repositories {
-        maven {
-            url uri("/Users/sky/Desktop/repo")
-        }
-        mavenCentral()
+        mavenLocal()
     }
 
 随后输入以下命令完成构建。
@@ -43,5 +33,3 @@ TabooLib Test Units
 .. code-block:: bash
     
     ./gradlew build
-
-使用 ``/build/libs/TabooLib_6_0_0_7_Test_Units-1.0.0-all.jar`` 文件在服务器中进行测试。
