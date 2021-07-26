@@ -6,7 +6,7 @@ TabooLib ``6.0`` 由多个子模块构成，统一存放在 TabooLib 仓库中�
 
 .. csv-table::
    :header: "模块", "说明"
-   :widths: 1, 3
+   :widths: 3, 7
    
    "common", "TabooLib 的核心部分，环境部署以及跨平台接口"
    "common-5", "TabooLib 5.0 版本保留下来的一些工具"
