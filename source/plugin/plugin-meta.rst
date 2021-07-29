@@ -28,11 +28,11 @@ Bukkit、Nukkit
 
 **说明**
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     taboolib {
         description {
-            desc '我是插件的说明'
+            desc("我是插件的说明")
         }
     }
 
@@ -44,9 +44,9 @@ Bukkit、Nukkit
         description {
             contributors {
                 // 作者名称
-                name 'Bkm016'
+                name("Bkm016")
                 // 说明（仅在 Sponge 平台有效）
-                name 'Bkm016' description 'TabooLib Devoloper'
+                name("Bkm016").description("TabooLib Devoloper")
             }
         }
     }
@@ -59,50 +59,50 @@ Bukkit、Nukkit
         description {
             dependencies {
                 // 插件名称
-                name 'Chemdah'
+                name("Chemdah")
                 // 限制平台（该依赖会在其他平台被抹去）
-                name 'Chemdah' with 'bukkit'
+                name("Chemdah").with("bukkit")
                 // 版本（仅在 Sponge7/8 平台有效）
-                name 'Chemdah' version '1.0.0'
+                name("Chemdah").version("1.0.0")
                 // 在该插件之后加载（仅在 Sponge8 平台有效）
-                name 'Chemdah' loadafter true
+                name("Chemdah").loadafter(true)
                 // 在该插件之前加载（仅在 Bukkit、Nukkit 平台有效）
-                name 'Chemdah' loadbefore true
+                name("Chemdah").loadbefore(true)
                 // 软依赖（仅在 Bukkit、Nukkit、Bungee、Sponge8 平台有效）
-                name 'Chemdah' optional true
+                name("Chemdah").optional(true)
                 // 模组依赖（仅在 Sponge7 平台有效）
-                name 'Chemdah' mod true
+                name("Chemdah").mod(true)
             }
         }
     }
 
 依赖的扩展选项大多数可以同时存在，如下所示：
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     taboolib {
         description {
             dependencies {
-                name 'Adyeshach' optional true
-                name 'Chemdah' with 'bukkit' optional true
-                name 'spongeapi' version '7.2.0' with 'sponge7'
-                name 'spongeapi' version '8.0.0' with 'sponge8' loadafter true
-                name 'ic3' with 'sponge7' mod true
+                name("Adyeshach").optional(true)
+                name("Chemdah").with("bukkit").optional(true)
+                name("spongeapi").version("7.2.0").with("sponge7")
+                name("spongeapi").version("8.0.0").with("sponge8").loadafter(true)
+                name("ic3").with 'sponge7' mod(true)
             }
         }
     }
 
 **链接**
 
-.. code-block:: groovy
+.. code-block:: kotlin
     
     taboolib {
         description {
             links {
                 // 在非 Sponge8 平台下只保留 homepage 链接
-                name 'homepage' url 'https://example.com'
-                name 'source' url 'https://example.com/source'
-                name 'issues' url 'https://example.com/issues'
+                name("homepage").url("https://example.com")
+                name("source").url("https://example.com/source")
+                name("issues").url("https://example.com/issues")
             }
         }
     }
@@ -113,7 +113,7 @@ Bukkit、Nukkit
 
     taboolib {
         description {
-            prefix 'Example'
+            prefix("Example")
         }
     }
 
@@ -125,7 +125,7 @@ Bukkit、Nukkit
         description {
             // START 表示这个插件在服务器启动时就开始加载。
             // POSTWORLD 表示这个插件在第一个世界加载完成后开始加载。
-            load 'START'
+            load("START")
         }
     }
 
@@ -136,7 +136,7 @@ Bukkit、Nukkit
     taboolib {
         description {
             // 这些是默认存在的，若没有改动可以省略
-            bukkitApi '1.13'
-            nukkitApi '1.0.0'
+            bukkitApi("1.13")
+            nukkitApi("1.0.0")
         }
     }

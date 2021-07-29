@@ -6,28 +6,25 @@
 
 下面是一个可以用于 ``Bukkit`` 平台插件的一个简单模板，别忘记把 ``group`` 替换成你的包名。
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     plugins {
-        id 'java'
-        // 不可低于 1.9 版本
-        id 'io.izzel.taboolib' version '1.9'
+        java
+        // 不可低于 1.12 版本
+        id("io.izzel.taboolib") version "1.12"
         // 基于 TabooLib Runtime Env 你可以使用任何版本的 Kotlin 环境
-        id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+        id("org.jetbrains.kotlin.jvm") version "1.5.10"
     }
-
-    group = 'com.example'
-    version = '1.0.0-SNAPSHOT'
 
     taboolib {
         description {
             contributors {
-                name '坏黑' description 'TabooLib Developer'
+                name("坏黑").description("TabooLib Developer")
             }
         }
-        install 'common'
-        install 'platform-bukkit'
-        version '6.0.0-es1'
+        install("common")
+        install("platform-bukkit")
+        version = "6.0.0-pre9"
     }
 
     repositories {
@@ -35,8 +32,10 @@
     }
 
     dependencies {
-        implementation 'ink.ptms.core:v11605:11605'
-        implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+        compileOnly("ink.ptms.core:v11701:11701:mapped")
+        compileOnly("ink.ptms.core:v11701:11701:universal")
+        compileOnly(kotlin("stdlib"))
+        compileOnly(fileTree("libs"))
     }
 
 .. note::
@@ -45,16 +44,16 @@
 
 你可以在 ``taboolib`` 选项中安装所需要的 :doc:`module` 和设置 TabooLib 版本。或是针对 :doc:`/plugin/plugin-meta` 进行更详细的设置。例如这这样修改可以添加在 ``Bukkit`` 平台运行所需的插件依赖。
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     taboolib {
         description {
             contributors {
-                name '坏黑' description 'TabooLib Developer'
+                name("坏黑").description("TabooLib Developer")
             }
             dependencies {
-                name 'Chemdah'
-                name 'Adyeshach' optional true
+                name("Chemdah")
+                name("Adyeshach").optional(true)
             }
         }
     }
