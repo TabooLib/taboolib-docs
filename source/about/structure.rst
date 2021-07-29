@@ -14,6 +14,7 @@ TabooLib ``6.0`` 由多个子模块构成，统一存放在 TabooLib 仓库中�
    "module-chat", "Component（Json）信息构建工具与 1.16 RGB 颜色转换"
    "module-configuration", "Yaml 封装接口与配置文件管理工具"
    "module-database", "数据库管理工具"
+   "module-database-mongodb", "数据库管理工具（MongoDB）"
    "module-effect", "粒子生成工具"
    "module-kether", "内建脚本（动作语句）解决方案"
    "module-lang", "语言文件工具"
