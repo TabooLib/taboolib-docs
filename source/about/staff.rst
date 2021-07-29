@@ -30,7 +30,7 @@
    
    "ElaBosak233", "开发者", "5.0"
    "Glom-c", "开发者", "5.0"
-   "inrhor", "开发者" "5.0"
+   "inrhor", "开发者", "5.0"
    "IzzelAliz", "核心开发者", "5.0"
    "Luohuayu", "开发者", "5.0"
    "shaokeyibb", "开发者", "5.0"
