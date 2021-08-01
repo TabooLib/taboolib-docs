@@ -58,7 +58,7 @@ Bukkit、Nukkit
     taboolib {
         description {
             dependencies {
-                // 插件名称
+                // 依赖插件名称（不要误会成写自己，会触发 self-loop 错误）
                 name("Chemdah")
                 // 限制平台（该依赖会在其他平台被抹去）
                 name("Chemdah").with("bukkit")
