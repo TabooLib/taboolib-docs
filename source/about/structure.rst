@@ -31,3 +31,10 @@ TabooLib ``6.0`` 由多个子模块构成，统一存放在 TabooLib 仓库中�
    "platform-sponge-api7", "Sponge (api7) 实现"
    "platform-sponge-api8", "Sponge (api8) 实现"
    "platform-velocity", "Velocity 实现"
+
+依赖关系
+--------
+
+TabooLib ``6.0`` 各个模块之间的关系如下。根据箭头颜色：同色为依赖，灰色为弱依赖。
+
+{{ taboolib map }}
