@@ -20,8 +20,15 @@
         $(document).ready(function () {
             $(".wy-nav-content-wrap").css("background", "none")
             $(".rst-versions .fa-caret-down").remove()
-            $(".wy-breadcrumbs-aside").html("<a href=\"https://github.com/TabooLib/TabooLibDocs/blob/master/source" + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('.')) + ".rst\" target=\"__black\" class=\"fa fa-github\"> Edit on Github</a>")
-            $("body").html($("body").html().replace("__taboolibmap__", "<iframe src=\"https://docs.tabooproject.org/map.html\" width=\"100%\" height=\"700px\"style=\"border: 0\"></iframe>"))
+            let page = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('.'))
+            if (page.length == 0) {
+                page = "index"
+            }
+            $(".wy-breadcrumbs-aside").html("<a href=\"https://github.com/TabooLib/TabooLibDocs/blob/master/source" + page + ".rst\" target=\"__black\" class=\"fa fa-github\"> Edit on Github</a>")
+            let body = $("body").html()
+            if (body.indexOf("__taboolibmap__") != -1) {
+                $("body").html(body.replace("__taboolibmap__", "<iframe src=\"https://docs.tabooproject.org/map.html\" width=\"100%\" height=\"700px\"style=\"border: 0\"></iframe>"))
+            }            
         })
     </script>
 </footer>
