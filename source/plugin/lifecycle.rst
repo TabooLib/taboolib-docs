@@ -23,7 +23,7 @@
    :header: "平台", "对应"
    :widths: 1, 2
    
-   "nukkit, nukkit, bungee", "对应原 ``onLoad()`` 方法"
+   "bukkit, nukkit, bungee", "对应原 ``onLoad()`` 方法"
    "sponge-api7", "对应原 ``GamePreInitializationEvent`` 事件"
    "sponge-api8", "对应原 ``ConstructPluginEvent`` 事件"
    "velocity", "对应原 ``ProxyInitializeEvent`` 事件"
@@ -37,7 +37,7 @@
    :header: "平台", "对应"
    :widths: 1, 2
    
-   "nukkit, nukkit, bungee", "对应原 ``onEnable()`` 方法"
+   "bukkit, nukkit, bungee", "对应原 ``onEnable()`` 方法"
    "sponge-api7", "对应原 ``GameInitializationEvent`` 事件"
    "sponge-api8", "对应原 ``StartingEngineEvent<Server>`` 事件"
    "velocity", "对应原 ``ProxyInitializeEvent`` 事件，与 LOAD 同时执行"
@@ -50,7 +50,7 @@
    :header: "平台", "对应"
    :widths: 1, 2
    
-   "nukkit, nukkit, bungee, velocity", "对应调度器开始执行时"
+   "bukkit, nukkit, bungee, velocity", "对应调度器开始执行时"
    "sponge-api7", "对应原 ``GameStartedServerEvent`` 事件"
    "sponge-api8", "对应原 ``StartedEngineEvent<Server>`` 事件"
 
@@ -62,7 +62,7 @@
    :header: "平台", "对应"
    :widths: 1, 2
    
-   "nukkit, nukkit, bungee", "对应原 ``onDisable()`` 方法"
+   "bukkit, nukkit, bungee", "对应原 ``onDisable()`` 方法"
    "sponge-api7", "对应原 ``GameStoppedServerEvent`` 事件"
    "sponge-api8", "对应原 ``StoppingEngineEvent<Server>`` 事件"
    "velocity", "对应原 ``ProxyShutdownEvent`` 事件"
