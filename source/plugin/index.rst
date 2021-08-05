@@ -28,3 +28,4 @@
     main
     lifecycle
     inject
+    rule

@@ -13,7 +13,7 @@ TabooLib 使用 **侵入式** 依赖注入（Dependency Injection）的方式向
     import taboolib.module.configuration.SecuredFile
     import org.bukkit.event.player.PlayerJoinEvent
 
-    object ExampleLifeCycle {
+    object Example {
 
         @Config
         lateinit var conf: SecuredFile
@@ -30,3 +30,21 @@ TabooLib 使用 **侵入式** 依赖注入（Dependency Injection）的方式向
         }
     }
 
+.. warning::
+
+    使用 class 是无法完成注入工作的，包括方法绑定。
+
+.. code-block:: kotlin
+
+    package io.github.username.project
+
+    import taboolib.common.platform.*
+    import org.bukkit.event.player.PlayerJoinEvent
+
+    class Example {
+
+        @SubscriptEvent
+        fun fun(PlayerJoinEvent e) {
+            // 错误的写法  
+        }
+    }
