@@ -15,7 +15,9 @@
 
 **糟糕的做法**
 
+.. code-block:: kotlin
+
     val myFile = newFile(getDataFolder(), "myfile.txt")
 
-在初始化属性时引用基于平台（Platform Side）的方法时，可能会触发 NPE 并产生该类的初始化错误。这种情况下我们推荐使用 Kotlin 所提供的 by lazy 关键字。
+在初始化属性时引用基于平台（Platform Side）的方法时，可能会触发 NPE 并产生该类的初始化错误。这种情况下我们推荐使用 Kotlin 所提供的 ``by lazy`` 关键字。
 

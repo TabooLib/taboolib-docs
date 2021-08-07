@@ -26,6 +26,7 @@
     plugin-identifier
     plugin-meta
     main
+    instance
     lifecycle
     inject
     rule
