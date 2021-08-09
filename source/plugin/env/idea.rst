@@ -10,6 +10,7 @@
 * 打开 **IntelliJ IDEA**。
 * 点击 ``New Project``。
 * 在弹出的窗口中选择 ``Gradle``。
+* 选中上方 ``Kotlin DSL build script``。
 * 点选 ``Kotlin/JVM`` 框架。
 * 确保你的 **Project SDK** 选项中选择了 Java 8/1.8 或者更高版本。
 * 点击 ``Next``。
@@ -22,7 +23,7 @@
   *  你的 ``Version`` 版本号由你决定，可以参考 :doc:`/plugin/project/version`。
 
 * 点击 ``Finish``。
-* 插件项目新建完成后，此时应该会有 ``/src/main/java`` 目录自动生成完毕，你在这个目录里可以开始写插件了。
+* 插件项目新建完成后，此时应该会有 ``/src/main/kotlin`` 目录自动生成完毕，你在这个目录里可以开始写插件了。
 
 编辑构建脚本
 ============
