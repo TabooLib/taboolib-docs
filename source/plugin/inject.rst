@@ -41,10 +41,11 @@ TabooLib 使用 **侵入式** 依赖注入（Dependency Injection）的方式向
     import taboolib.common.platform.*
     import org.bukkit.event.player.PlayerJoinEvent
 
+    // 错误的写法 
     class Example {
 
         @SubscriptEvent
         fun fun(PlayerJoinEvent e) {
-            // 错误的写法  
+            // ... 
         }
     }
