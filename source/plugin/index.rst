@@ -16,7 +16,7 @@
 ========
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 5
     :titlesonly:
 
     get-version
@@ -30,4 +30,4 @@
     lifecycle
     inject
     rule
-    module
+    module/index
