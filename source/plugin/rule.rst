@@ -49,10 +49,10 @@ API
 包名及混淆
 ==========
 
-因 TabooLib 中的部分行为基于绝对路径，所以在项目的包名中不允许出现 ``kotlin`` 或 ``taboolib`` 关键字，在混淆时也必须排除 ``taboolib`` 包下的所有内容。
-
 **糟糕的做法**
 
 .. code-block:: kotlin
 
     package com.github.username.taboolib
+
+因 TabooLib 中的部分行为基于绝对路径，所以在项目的包名中不允许出现 ``kotlin`` 或 ``taboolib`` 关键字，在混淆时也必须排除 ``taboolib`` 包下的所有内容。
