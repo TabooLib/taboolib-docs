@@ -28,7 +28,7 @@ API
 
 .. code-block:: kotlin
 
-    interfact API {
+    interface API {
 
         fun doSomething(function: (String) -> Unit)
     }
@@ -39,7 +39,7 @@ API
 
     import java.util.function.*
 
-    interfact API {
+    interface API {
 
         fun doSomething(function: Consumer<String>)
     }
