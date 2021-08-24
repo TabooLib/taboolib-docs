@@ -30,3 +30,4 @@
     lifecycle
     inject
     rule
+    module

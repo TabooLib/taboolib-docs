@@ -10,8 +10,8 @@
 
     plugins {
         java
-        // 不可低于 1.18 版本
-        id("io.izzel.taboolib") version "1.18"
+        // 不可低于 1.24 版本
+        id("io.izzel.taboolib") version "1.24"
         // 基于 TabooLib Runtime Env 你可以使用任何版本的 Kotlin 环境
         id("org.jetbrains.kotlin.jvm") version "1.5.10"
     }
@@ -24,7 +24,7 @@
         }
         install("common")
         install("platform-bukkit")
-        version = "6.0.0-pre45"
+        version = "6.0.0-pre57"
     }
 
     repositories {
