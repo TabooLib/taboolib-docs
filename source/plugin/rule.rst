@@ -21,15 +21,38 @@
 
 在初始化属性时引用基于平台（Platform Side）的方法时，可能会触发 NPE 并产生该类的初始化错误。这种情况下我们推荐使用 Kotlin 所提供的 ``by lazy`` 关键字。
 
-混淆
+API
 =====
 
-因 TabooLib 中的部分行为基于绝对路径，所以在混淆时必须排除 ``taboolib`` 包下的所有内容。下面是一段代码节选。
+**糟糕的做法**
 
 .. code-block:: kotlin
 
-    override fun getOpenContainers(): List<OpenContainer> {
-        return Bukkit.getPluginManager().plugins.filter { it.javaClass.name.endsWith("platform.BukkitPlugin") }.mapNotNull {
-            pluginContainer.computeIfAbsent(it.name) { _ -> BukkitOpenContainer(it) }
-        }
+    interfact API {
+
+        fun doSomething(function: (String) -> Unit)
     }
+
+**推荐的做法**
+
+.. code-block:: kotlin
+
+    import java.util.function.*
+
+    interfact API {
+
+        fun doSomething(function: Consumer<String>)
+    }
+
+因 TabooLib 会在编译插件时对 Kotlin 引用进行重定向，所以在编写对外开放的 API 时不允许使用 Kotlin 接口。内部使用则没有此条限制。
+
+包名及混淆
+==========
+
+因 TabooLib 中的部分行为基于绝对路径，所以在项目的包名中不允许出现 ``kotlin`` 或 ``taboolib`` 关键字，在混淆时也必须排除 ``taboolib`` 包下的所有内容。
+
+**糟糕的做法**
+
+.. code-block:: kotlin
+
+    package com.github.username.taboolib
