@@ -38,6 +38,7 @@
 **示例：加载多个依赖**
 
 Java：
+
 .. code-block:: java
 
     @RuntimeDependency(value = "com.google.guava:guava:21.0", test = "com.google.common.base.Optional")
@@ -45,6 +46,7 @@ Java：
     public class TabooLibCommon { }
 
 Kotlin：
+
 .. code-block:: kotlin
 
     @RuntimeDependencies(
@@ -78,7 +80,9 @@ Kotlin：
 
 **示例：依赖传递**
 
-在默认情况下，我们会对 ``pom`` 文件进行解析并同时加载它的其他依赖。例如 ``asm-commons`` 的依赖关系如下：
+在默认情况下，我们会对 ``pom`` 文件进行解析并同时加载它的其他依赖。
+
+例如 ``asm-commons`` 的依赖关系如下：
 
 .. code-block:: xml
 
@@ -103,28 +107,30 @@ Kotlin：
         </dependency>
     </dependencies>
 
-当我们使用 ``@RuntimeDependency("org.ow2.asm:asm-commons:9.2")`` 时，会同时加载它其他的 ``编译`` 及 ``运行`` 依赖。
+加载 ``asm-commons`` 时同时加载：
 
 * org.ow2.asm:asm:9.2
 * org.ow2.asm:asm-tree:9.2
 * org.ow2.asm:asm-commons:9.2
 * org.ow2.asm:asm-analysis:9.2
 
-通过 ``transitive`` 参数便可以关闭依赖传递。
+通过 ``transitive`` 参数关闭依赖传递。
 
 .. code-block:: Kotlin
 
     @RuntimeDependency("org.ow2.asm:asm-commons:9.2", transitive = false)
     class MyPlugin
 
-默认情况下我们不会传递被标注为可选（optional）的依赖，通过关闭 ``ignoreOptional`` 参数来跳过这一限制。
+以及，默认情况下不会传递可选的依赖，通过 ``ignoreOptional`` 参数关闭这一限制。
 
 .. code-block:: Kotlin
 
     @RuntimeDependency("org.ow2.asm:asm-commons:9.2", ignoreOptional = false)
     class MyPlugin
 
-不仅如此还可以通过修改 ``scopes`` 参数来决定加载特定范围的依赖。
+不仅如此，还可以通过修改 ``scopes`` 参数来加载特定范围内的依赖。
+
+.. code-block:: Kotlin
 
     @RuntimeDependency("org.ow2.asm:asm-commons:9.2", scopes = {DependencyScope.RUNTIME})
     class MyPlugin

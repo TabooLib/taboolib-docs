@@ -2,7 +2,7 @@
 程序入口
 ========
 
-``taboolib.common.TabooLibCommon`` 作为 TabooLib 的程序入口。用于部署运行环境以及调度生命周期，但是这些方法不需要由插件开发者调用。除此之外该类还提供了一些必要的方法。
+TabooLibCommon 作为 TabooLib 的入口，用于部署运行环境以及调度生命周期，但是这些方法不需要由插件开发者调用。除此之外该类还提供了一些必要的方法。
 
 .. code-block:: java
 
