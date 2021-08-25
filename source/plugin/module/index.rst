@@ -40,3 +40,21 @@
     ai
     chat
     configuration/index
+    database/index
+    database-mongo
+    effect/index
+    kether
+    metrics
+    navigation
+    nms/index
+    nms-util/index
+    porticus
+    ui/index
+    ui-receptacle/index
+    platform/application
+    platform/bukkit/index
+    platform/bungee/index
+    platform/nukkit/index
+    platform/sponge7/index
+    platform/sponge8/index
+    platform/velocity/index

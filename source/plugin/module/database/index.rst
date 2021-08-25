@@ -16,4 +16,7 @@ module-database
     :maxdepth: 2
     :titlesonly:
 
-    
+    host
+    table
+    workspace
+    query

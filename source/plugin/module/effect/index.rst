@@ -16,4 +16,18 @@ module-effect
     :maxdepth: 2
     :titlesonly:
 
-    
+    arc
+    astroid
+    circle
+    line
+    ploygon
+    sphere
+    matrix
+    renderer
+    projector
+    coordinate
+    bezier
+    equations
+    location
+    vector
+    wing

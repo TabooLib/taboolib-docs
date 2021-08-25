@@ -1,8 +1,8 @@
 =============
-module-nms
+module-ui
 =============
 
-这部分提供了一些必要的 Bukkit 平台服务端逆向工具。
+这部分作为 Bukkit 平台的箱子菜单构建工具，提供了数种不同类型的结构。
 
 **该模块依赖于：**
 
@@ -16,7 +16,6 @@ module-nms
     :maxdepth: 2
     :titlesonly:
 
-    version
-    transfer
-    packet
-    reflect
+    basic
+    linked
+    stored

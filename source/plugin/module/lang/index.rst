@@ -18,4 +18,8 @@ module-lang
     :maxdepth: 2
     :titlesonly:
 
+    guide
+    type
+    event
+
     

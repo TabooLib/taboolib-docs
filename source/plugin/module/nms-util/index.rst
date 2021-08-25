@@ -16,4 +16,11 @@ module-nms-util
     :maxdepth: 2
     :titlesonly:
 
-    
+    i18n
+    light
+    nbt
+    toast
+    map
+    scoreboard
+    sign
+    util
