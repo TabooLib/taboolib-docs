@@ -2,7 +2,7 @@
 扩展工具
 ========
 
-这部分作为 common 模块中的基本工具，多以扩展函数的形式出现。
+这部分作为 common 模块中的小工具，多以扩展函数的形式出现。
 
 内容
 ========
@@ -13,11 +13,6 @@
 
     file
     project
-    zip
     collection
-    common
-    iterable
-    map
-    optional
     random
     string

@@ -37,3 +37,6 @@
 
     common/index
     common-5/index
+    ai
+    chat
+    configuration/index
