@@ -2,7 +2,7 @@
 common
 =======
 
-这部分作为 TabooLib 的核心组成，贯穿整个开发流程。
+这部分作为 TabooLib 的核心组成，贯穿整个开发流程。大致分为以下几个部分。
 
 内容
 ========
@@ -11,5 +11,13 @@ common
     :maxdepth: 2
     :titlesonly:
 
-    openapi
-    
+    common
+    env
+    platform/index
+    releasable
+    schedule
+    skipto
+    version    
+    injector
+    reflect
+    util/index
