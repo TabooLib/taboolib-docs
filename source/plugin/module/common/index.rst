@@ -2,7 +2,13 @@
 common
 =======
 
-这部分作为 TabooLib 的核心组成，贯穿整个开发流程。大致分为以下几个部分。
+这部分作为 TabooLib 的核心组成，贯穿整个开发流程。安装方式：
+
+.. code-block:: kotlin
+    
+    taboolib {
+        install("common")
+    }
 
 内容
 ========
