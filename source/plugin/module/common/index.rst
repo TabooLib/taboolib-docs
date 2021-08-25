@@ -2,13 +2,7 @@
 common
 =======
 
-这部分作为 TabooLib 的核心组成，贯穿整个开发流程。安装方式：
-
-.. code-block:: kotlin
-    
-    taboolib {
-        install("common")
-    }
+这部分作为 TabooLib 的核心组成，贯穿整个开发流程。
 
 内容
 ========
@@ -21,9 +15,8 @@ common
     env
     platform/index
     releasable
-    schedule
-    skipto
-    version    
     injector
     reflect
+    version
+    variablereader
     util/index

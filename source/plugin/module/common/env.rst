@@ -8,10 +8,7 @@
 
 依赖加载在 common 模块中有着至关重要的作用，能够在项目运行过程中动态加载第三方依赖文件。并对 ``pom`` 文件进行简单的解析，完成依赖传递等一系列逻辑。极大程度的减少 ``jar`` 文件的体积，以及 TabooLib 中的 Kotlin 环境便是由该系统完成。
 
-这套系统大致由两个部分组成，前者用于远程加载依赖文件，后者用于下载资源文件。
-
-* @RuntimeDependency（@RuntimeDependencies）
-* @RuntimeResource（@RuntimeResources）
+在绝大多数情况下，我们都只需要 @RuntimeDependency 与 @RuntimeDependencies 来完成全部操作。
 
 **示例：加载 Guava**
 
