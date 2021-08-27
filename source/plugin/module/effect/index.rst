@@ -19,6 +19,7 @@ module-effect
     arc
     astroid
     circle
+    cube
     line
     ploygon
     sphere
