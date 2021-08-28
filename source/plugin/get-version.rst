@@ -4,7 +4,7 @@
 
 .. csv-table::
     :header: "构建版本", "发行时间", "发行者", "插件版本"
-    :widths: 1, 1, 1, 1
+    :widths: 3, 5, 5, 2
 
     "|version-latest|", "|version-latest-date|", "|version-latest-author|", "|version-plugin|"
     
