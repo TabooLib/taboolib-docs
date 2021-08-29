@@ -46,6 +46,8 @@ API
 
 因 TabooLib 会在编译插件时对 Kotlin 引用进行重定向，所以在编写对外开放的 API 时不允许使用 Kotlin 接口。内部使用则没有此条限制。
 
+详见 :doc:`/plugin/project/gradle`
+
 包名及混淆
 ==========
 
