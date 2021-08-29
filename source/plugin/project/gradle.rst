@@ -57,3 +57,28 @@
             }
         }
     }
+
+**版本隔离**
+
+为了解决 Kotlin 的版本冲突问题，TabooLib 在编译插件时会对所有 Koltin 引用进行重定向。例如 ``koltin.Lazy`` 将会被重定向到 ``kotlin1510.Lazy``，这里的 ``1510`` 代表 kotlin ``1.5.10`` 版本。通过 ``options`` 选项来修改这一过程。
+
+·· code-block: kotlin
+
+    taboolib {
+        // 不对 Kotlin 进行重定向，且不下载 Kotlin 标准库。
+        options("skip-kotlin")
+    }
+    
+·· code-block: kotlin
+
+    taboolib {
+        // 不对 Kotlin 进行重定向
+        options("skip-kotlin-relocate")
+    }
+
+·· code-block: kotlin
+
+    taboolib {
+        // 移除 Runtime Env 部分代码，不建议使用
+        options("skip-env")
+    }
