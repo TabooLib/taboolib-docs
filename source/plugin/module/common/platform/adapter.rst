@@ -15,7 +15,7 @@
 
 .. csv-table::
     :header: "平台", "ProxyPlayer 实现", "ProxyCommandSender 实现"
-    :widths: 1, 3, 3
+    :widths: 1, 2, 2
 
     "Bukkit", "Player", "CommandSender"
     "Nukkit", "Player", "CommandSender"
