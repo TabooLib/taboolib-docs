@@ -8,6 +8,7 @@ module-configuration
 
 * common
 * common-5（可选）
+* module-chat（可选）
 
 内容
 ========
