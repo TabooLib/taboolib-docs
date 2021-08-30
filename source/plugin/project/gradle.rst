@@ -65,14 +65,14 @@
 
 通过 ``options`` 方法来阻止这个过程。
 
-·· code-block:: kotlin
+.. code-block:: kotlin
 
     taboolib {
         // 不对 Kotlin 进行重定向，且不下载 Kotlin 标准库。
         options("skip-kotlin")
     }
     
-·· code-block:: kotlin
+.. code-block:: kotlin
 
     taboolib {
         // 不对 Kotlin 进行重定向
