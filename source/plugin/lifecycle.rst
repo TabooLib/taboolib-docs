@@ -94,6 +94,6 @@
 
 .. warning::
 
-    所有注入工作只允许在单例 (object) 中完成，伴生对象 (companion object) 是不受支持的。
+    所有注入工作只允许在单例 (object) 或伴生对象 (companion object) 中完成。
     
 若要阻止其他插件引用可以使用 ``internal object``，禁止使用 ``private object``。
