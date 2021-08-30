@@ -4,7 +4,7 @@
 
 .. csv-table::
     :header: "构建版本", "发行时间", "发行者", "插件版本"
-    :widths: 3, 5, 5, 2
+    :widths: 3, 5, 5, 3
 
     "|version-latest|", "|version-latest-date|", "|version-latest-author|", "|version-plugin|"
     
@@ -26,8 +26,8 @@
     }
 
     taboolib {
-        // verison = "6.0.0-27"
-        verison = "构建版本"
+        // version = "6.0.0-27"
+        version = "构建版本"
     }
 
 你可以使用旧版本的 TabooLib 来开发插件，但是我们始终建议更新到最新稳定版本。
