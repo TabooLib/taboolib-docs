@@ -30,7 +30,7 @@
 
 .. csv-table::
     :header: "属性", "作用", "示例"
-    :widths: 1, 1
+    :widths: 1, 1, 1
 
     "priority", "优先级", "EventPriority.NORMAL"
     "ignoreCancelled", "忽略已被取消的事件", "false"
@@ -39,7 +39,7 @@
 
 .. csv-table::
     :header: "属性", "作用", "示例"
-    :widths: 1, 1
+    :widths: 1, 1, 1
 
     "level", "优先级", "0"
     "ignoreCancelled", "忽略已被取消的事件", "false"
@@ -48,7 +48,7 @@
 
 .. csv-table::
     :header: "属性", "作用", "示例"
-    :widths: 1, 1
+    :widths: 1, 1, 1
 
     "postOrder", "优先级", "PostOrder.NORMAL"
 
@@ -56,7 +56,7 @@
 
 .. csv-table::
     :header: "属性", "作用", "示例"
-    :widths: 1, 1
+    :widths: 1, 1, 1
 
     "order", "优先级", "EventOrder.DEFAULT"
     "beforeModifications", "在其他服务器修改前调用监听器", "false"
