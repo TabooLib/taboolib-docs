@@ -26,6 +26,10 @@
 注册开放接口
 ~~~~~~~~~~~
 
+用于接收开放接口调用请求，依赖 ``@Awake`` 注解自动注册。
+
+.. code-block:: kotlin
+
     @Awake
     object MyListener : OpenListener {
 
@@ -34,15 +38,13 @@
         }
     }
 
-添加 ``@Awake`` 注解后 TabooLib 会为你自动注册。
-
 使用开放接口
 ~~~~~~~~~~~
+
+代码节选自 ``kether`` 模块。
 
 .. code-block:: kotlin
 
     getOpenContainers().forEach {
         it.call(StandardChannel.REMOTE_ADD_ACTION, arrayOf(pluginId, annotation.value, annotation.namespace))
     }
-
-代码节选自 KetherLoader 部分。
