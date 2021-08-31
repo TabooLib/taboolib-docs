@@ -85,7 +85,7 @@
     "description", "描述"
     "usage", "使用方式"
     "permission", "使用权限（默认为：插件名称.指令.use）"
-    "permissionMessage", "没有权限的提示信息",
+    "permissionMessage", "没有权限的提示信息"
     "permissionDefault", "默认拥有权限（该功能目前仅限 Bukkit 平台）"
 
 TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是通过逐层的嵌套来完成对命令的解释。
