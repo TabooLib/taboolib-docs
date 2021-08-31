@@ -60,3 +60,20 @@
 
     "order", "优先级", "EventOrder.DEFAULT"
     "beforeModifications", "在其他服务器修改前调用监听器", "false"
+
+可能不存在的事件
+~~~~~~~~~~~~~~
+
+假设我们监听了第三方插件中的事件，若这个插件并未安装，那么就会导致整个类无法加载。但往往很多时候，我们不会使用 ``depend`` 来解决这个问题。在 TabooLib 中我们可以使用 ``OptionalEvent`` 事件来代替。
+
+在 Bukkit 1.8 没有副手也没有 ``PlayerSwapHandItemsEvent`` 事件，直接监听会导致插件无法在 1.8 版本使用。
+
+.. code-block:: kotlin
+
+    @SubscribeEvent(bind = "org.bukkit.event.player.PlayerSwapHandItemsEvent")
+    fun onSwap(ope: OptionalEvent) {
+        val e = ope.get<PlayerSwapHandItemsEvent>()
+        // ...
+    }
+
+使用 ``bind`` 属性指向完整的类名，即可定义一个 **可能不存在的事件**，同等于直接监听。
