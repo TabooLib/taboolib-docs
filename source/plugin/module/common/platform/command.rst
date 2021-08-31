@@ -88,7 +88,7 @@
     "permissionMessage", "没有权限的提示信息"
     "permissionDefault", "默认拥有权限（该功能目前仅限 Bukkit 平台）"
 
-TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是通过逐层的嵌套来完成对命令的解释。
+TabooLib 的命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是通过逐层的嵌套来完成对命令的解释。
 
 .. code-block:: kotlin
 
@@ -104,7 +104,7 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
 
     命令的逻辑必须在 ``execute`` 代码块中实现。
 
-接下来需要实现 ``/command [玩家]`` 命令向该玩家发送 ``HelloWorld`` 信息。
+接下来实现 ``/command [玩家]`` 命令向该玩家发送 ``HelloWorld`` 信息。
 
 .. code-block:: kotlin
 
@@ -151,7 +151,7 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
         }
     }
 
-``literal`` 代表一个明文规定的参数，使用 ``/command all`` 将会执行这部分的逻辑。
+添加 ``literal`` 结构明文规定 ``all`` 参数，使用 ``/command all`` 将会执行这部分的逻辑。
 
 **限制执行人**
 
