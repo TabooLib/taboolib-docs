@@ -128,15 +128,13 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
 
 这样以来，我们便完成了对该命令的升级。输入 ``/command [玩家]`` 执行第一个 ``execute`` 部分，发送信息给该玩家，不是用参数直接输入 ``/command`` 则执行第二个 ``execute`` 部分，发送信息给自己。相信你可以理解这样的结构。
 
-细心的你可能发现在第一个 ``execute`` 中，我们在获取玩家后使用了 **非空断言**。
+第一个 ``execute`` 中我们在获取玩家时使用了 **非空断言**。
 
 .. code-block:: kotlin
 
     getProxyPlayer(argument)!!.sendMessage("HelloWorld")
 
-为什么不做空指针判断？这样在输入一个不存在的玩家后不会报错吗？
-
-其实，这部分逻辑已经由 ``suggestion`` 部分完成了。我们输入一个补全结果之外的内容将不会执行 ``execute`` 部分。若要关闭这个限制，则需要在 ``suggestion`` 中启用 ``uncheck`` 选项，不进行参数检查。
+为什么不做空指针判断？因为这部分逻辑已经被 ``suggestion`` 部分代替了。在输入一个补全结果之外的内容将不会执行 ``execute`` 部分。若要关闭这个限制，则需要在 ``suggestion`` 中启用 ``uncheck`` 选项，不进行参数检查。
 
 .. code-block:: kotlin
 
