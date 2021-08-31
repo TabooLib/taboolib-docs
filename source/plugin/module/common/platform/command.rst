@@ -79,14 +79,14 @@
 
 .. csv-table::
     :header: "名称", "作用"
-    :widths: 1, 1
+    :widths: 1, 2
 
     "aliases", "别名"
     "description", "描述"
     "usage", "使用方式"
     "permission", "使用权限（默认为：插件名称.指令.use）"
     "permissionMessage", "没有权限的提示信息",
-    "permissionDefault", "默认拥有权限"
+    "permissionDefault", "默认拥有权限（该功能目前仅限 Bukkit 平台）"
 
 TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是通过逐层的嵌套来完成对命令的解释。
 
@@ -104,7 +104,7 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
 
     命令的逻辑必须在 ``execute`` 代码块中实现。
 
-接下来我需要实现使用 ``/command [玩家]`` 命令向该玩家发送 ``HelloWorld`` 信息。
+接下来需要实现 ``/command [玩家]`` 命令向该玩家发送 ``HelloWorld`` 信息。
 
 .. code-block:: kotlin
 
@@ -128,21 +128,7 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
 
 这样以来，我们便完成了对该命令的升级。输入 ``/command [玩家]`` 执行第一个 ``execute`` 部分，发送信息给该玩家，不使用参数直接输入 ``/command`` 则执行第二个 ``execute`` 部分发送信息给自己。相信你可以理解这样的结构。
 
-第一个 ``execute`` 中我们在获取玩家时使用了 **非空断言**。
-
-.. code-block:: kotlin
-
-    getProxyPlayer(argument)!!.sendMessage("HelloWorld")
-
-为什么不做空指针判断？因为这部分逻辑已经被 ``suggestion`` 部分代替了。在输入一个补全结果之外的内容将不会执行 ``execute`` 部分。若要关闭这个限制，则需要在 ``suggestion`` 中启用 ``uncheck`` 选项，不进行参数检查。
-
-.. code-block:: kotlin
-
-    suggestion<ProxyCommandSender>(uncheck = true) { sender, context -> 
-        onlinePlayers().map { it.name }
-    }
-
-现在，我需要实现使用 ``/command all`` 命令向所有玩家发送 ``HelloWorld`` 信息。
+现在，我需要实现 ``/command all`` 命令向所有玩家发送 ``HelloWorld`` 信息。
 
 .. code-block:: kotlin
 
@@ -185,6 +171,33 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
     }
 
 这完全避免了我们在命令开发过程中的类型判断与转换过程。
+
+**限制参数**
+
+第一个 ``execute`` 中，我们获取玩家时直接使用了 **非空断言**，而没有进行空指针判断。
+
+.. code-block:: kotlin
+
+    getProxyPlayer(argument)!!.sendMessage("HelloWorld")
+
+因为 ``suggestion`` 代替我们进行了参数判断，在输入补全结果之外的内容将不会执行 ``execute`` 部分。若要关闭这个限制，则需要在 ``suggestion`` 中启用 ``uncheck`` 选项，不进行参数检查。
+
+.. code-block:: kotlin
+
+    suggestion<ProxyCommandSender>(uncheck = true) { sender, context -> 
+        onlinePlayers().map { it.name }
+    }
+
+若 ``dynamic`` 参数没有提供补全，我们可以使用 ``restrict`` 结构来约束输入参数。
+
+.. code-block:: kotlin
+
+    dynamic {
+        restrict<ProxyCommandSender> { sender, context, argument -> 
+            // 只允许使用数字类型
+            Coerce.asInteger(argument).isPresent
+        }
+    }
 
 **嵌套结构**
 
@@ -229,5 +242,82 @@ TabooLib 到命令注册与 Bukkit 不同，没有 ``args`` 的概念，而是�
         }
     }
 
+**重写错误信息**
+
+默认情况下，错误信息由 TabooLib 代理发送，具体表现为：
+
+* Incorrect sender for command
+* Unknown or incomplete command, see below for error
+* Incorrect argument for command
+
+分别可以通过 ``incorrectSender`` 与 ``incorrectCommand`` 方法重写。
+
+.. code-block:: kotlin
+
+    command("command") {
+        // 错误的执行者
+        incorrectSender { sender, context -> 
+                
+        }
+        // 错误的命令
+        incorrectCommand { sender, context, index, state -> 
+            // index 为错误参数的位置
+            // state 为错误的类型
+            // 1 -> Unknown or incomplete command, see below for error
+            // 2 -> Incorrect argument for command
+        }
+    }
+
 简化命令注册
 ~~~~~~~~~~~
+
+除使用 ``command`` 顶级函数外，还可以通过注解进行命令注册。基于 :doc:`/plugin/inject`，命令需要在单例或伴生类中定义。
+
+.. code-block:: kotlin
+
+    @CommandHeader("command")
+    object Command {
+
+        /**
+         * 同等于：
+         * command("command") {
+         *     dynamic {
+         *         ...
+         *     }
+         *     execute<ProxyCommandSender> { sender, context, argument ->
+         *         ...
+         *     }
+         * }
+         */
+        @CommandBody
+        val main = mainCommand {
+            dynamic {
+                suggestion<ProxyCommandSender> { sender, context -> 
+                    onlinePlayers().map { it.name }
+                }
+                execute<ProxyCommandSender> { sender, context, argument ->
+                    getProxyPlayer(argument)!!.sendMessage("HelloWorld")
+                }
+            }
+            execute<ProxyCommandSender> { sender, context, argument ->
+                sender.sendMessage("HelloWorld")
+            }
+        }
+        
+        /**
+         * 同等于：
+         * command("command") {
+         *     literal("all", optional = true) {
+         *         ...
+         *     }
+         * }
+         */
+        @CommandBody(optional = true)
+        val all = subCommand {
+            execute<ProxyCommandSender> { sender, context, argument ->
+                onlinePlayers().forEach { it.sendMessage("HelloWorld") }
+            }
+        }
+    }
+
+相比标准命令注册方式，这样省去了定义 ``@Awake`` 的过程，使项目更加有序且规范。
