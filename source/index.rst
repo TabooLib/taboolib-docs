@@ -49,7 +49,7 @@ TabooLib 自 ``6.0`` 版本起不再是 **动态下载** 模式，而是改为�
 现在我们将开始编写基于 TabooLib 的跨平台 Minecraft 服务器插件。
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 5
     :titlesonly:
 
     plugin/index

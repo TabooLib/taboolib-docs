@@ -16,7 +16,7 @@
 ========
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 5
     :titlesonly:
 
     get-version
@@ -26,5 +26,8 @@
     plugin-identifier
     plugin-meta
     main
+    instance
     lifecycle
     inject
+    rule
+    module/index

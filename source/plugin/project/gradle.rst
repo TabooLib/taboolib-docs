@@ -10,8 +10,8 @@
 
     plugins {
         java
-        // 不可低于 1.12 版本
-        id("io.izzel.taboolib") version "1.12"
+        // 不可低于 1.25 版本
+        id("io.izzel.taboolib") version "1.25"
         // 基于 TabooLib Runtime Env 你可以使用任何版本的 Kotlin 环境
         id("org.jetbrains.kotlin.jvm") version "1.5.10"
     }
@@ -24,7 +24,7 @@
         }
         install("common")
         install("platform-bukkit")
-        version = "6.0.0-pre9"
+        version = "6.0.0-pre57"
     }
 
     repositories {
@@ -56,4 +56,25 @@
                 name("Adyeshach").optional(true)
             }
         }
+    }
+
+版本隔离
+~~~~~~~~
+
+为了解决 Kotlin 的版本冲突问题，TabooLib 在编译插件时会对所有 Koltin 引用进行重定向。例如 ``koltin.Lazy`` 将会被重定向到 ``kotlin1510.Lazy``，这里 ``1510`` 代表 kotlin ``1.5.10`` 版本。
+
+通过 ``options`` 方法来阻止这个过程。
+
+.. code-block:: kotlin
+
+    taboolib {
+        // 不对 Kotlin 进行重定向，且不下载 Kotlin 标准库。
+        options("skip-kotlin")
+    }
+    
+.. code-block:: kotlin
+
+    taboolib {
+        // 不对 Kotlin 进行重定向
+        options("skip-kotlin-relocate")
     }

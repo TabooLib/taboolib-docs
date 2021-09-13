@@ -38,6 +38,7 @@ Oracle `推荐 <https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.
     package io.github.username.project
 
     import taboolib.common.platform.*
+    import taboolib.common.platform.function.*
 
     object ExamplePlugin : Plugin() {
 
