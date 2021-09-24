@@ -16,7 +16,13 @@
 
 .. |version-plugin| image:: https://img.shields.io/badge/dynamic/json?label=Plugin&query=%24.tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2FTabooLib%2Ftaboolib-gradle-plugin%2Freleases%2Flatest
 
-我们在开发过程中，应当使用较新的构建版本。
+最近一次提交：
+
+|update|
+    
+.. |update| image:: https://img.shields.io/badge/dynamic/json?label=Update&query=%24.0.commit.message&url=https%3A%2F%2Fapi.github.com%2Frepos%2FTabooLib%2FTabooLib%2Fcommits
+
+我们在开发过程中应当使用较新的构建版本。
 
 .. code-block:: kotlin
 
