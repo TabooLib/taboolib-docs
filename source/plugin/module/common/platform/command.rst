@@ -34,7 +34,7 @@
 .. code-block:: kotlin
 
     @CommandHeader("tpuuid")
-    class TpUUID {
+    object TpUUID {
 
         @CommandBody
         val main = mainCommand {
