@@ -11,3 +11,4 @@
      * 例如 "你好, {0}".replaceWithOrder("世界")，速度是 format 的数倍
      */
     fun String.replaceWithOrder(vararg args: Any): String
+    
