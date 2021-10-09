@@ -47,7 +47,7 @@
      * 若目标为文件夹则复制其所有子文件
      */
     fun File.deepCopyTo(target: File)
-
+    
     /**
      * 取字符串的数字签名
      * @param algorithm 算法类型（可使用：md5, sha-1, sha-256 等）
@@ -66,7 +66,7 @@
      * @param skipParent 是否跳过该文件，从子文件开始压缩
      */
     fun File.zip(target: File, skipParent: Boolean = false)
-
+    
     /**
      * 解压文件
      * @param target 解压后的文件
@@ -83,7 +83,7 @@
      * 使用 GZIP 算法压缩字节
      */
     fun ByteArray.zip(): ByteArray
-
+    
     /**
      * 使用 GZIP 算法解压字节
      */

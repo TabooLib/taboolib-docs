@@ -20,7 +20,7 @@
      * 通过 ThreadLocalRandom 生成 0 ~ v 之间的随机整型数
      */
     fun random(v: Int): Int
-
+    
     /**
      * 通过 ThreadLocalRandom 生成 num1 ~ num2 之间的随机整型数
      */

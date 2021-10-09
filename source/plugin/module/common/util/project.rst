@@ -17,7 +17,7 @@
      * @param newInstance 若无任何已加载的实例，是否实例化
      */
     fun <T> Class<T>.getInstance(newInstance: Boolean = false): Supplier<T>?
-
+    
     /**
      * 依赖注入
      */
@@ -44,7 +44,7 @@
      * 若在项目中显示声明 "taboolib" 将会被重定向，故添加此方法
      */
     inline val taboolibId: String
-
+    
     /**
      * 同等于：
      * groupId + taboolibId
