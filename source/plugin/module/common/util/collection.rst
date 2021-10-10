@@ -23,7 +23,7 @@
      * @param end 结束位置（默认为元素数量）
      */
     fun <K, V> subMap(map: Map<K, V>, start: Int = 0, end: Int = map.size - 1): List<Map.Entry<K, V>>
-
+    
     /**
      * 安全的写入元素
      *
@@ -32,7 +32,7 @@
      * @param def 若写入位置之前存在空缺，则写入该默认值
      */
     fun <T> MutableList<T>.setSafely(index: Int, element: T, def: T)
-
+    
     /**
      * 安全的插入元素
      *
@@ -41,7 +41,7 @@
      * @param def 若插入位置之前存在空缺，则写入该默认值
      */
     fun <T> MutableList<T>.addSafely(index: Int, element: T, def: T)
-
+    
     /**
      * 遍历一个集合
      * 可以在遍历的过程中使用 close() 方法结束遍历，以弥补 Kotlin 无法使用 break 的设计

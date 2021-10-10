@@ -58,3 +58,4 @@
     platform/sponge7/index
     platform/sponge8/index
     platform/velocity/index
+    expansion/index
