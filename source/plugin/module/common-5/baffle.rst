@@ -69,7 +69,7 @@
      *
      * @return 是否运行
      */
-    public boolean hasNext()
+    public boolean hasNext();
 
     /**
      * 同 {@link Baffle#hasNext(String, boolean)}
@@ -77,9 +77,11 @@
      * @param id 个体序号
      * @return 是否运行
      */
-    public boolean hasNext(String id)
+    public boolean hasNext(String id);
 
 具体使用方式如下所示：
+
+.. code-block:: kotlin
 
     object Listener {
         
