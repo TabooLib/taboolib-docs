@@ -79,7 +79,7 @@
      */
     public boolean hasNext(String id);
 
-具体使用方式如下所示：
+具体使用方式可以表现为以下形式：
 
 .. code-block:: kotlin
 
