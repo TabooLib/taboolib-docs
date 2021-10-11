@@ -25,3 +25,4 @@ common-5
     mirror
     random
     js
+    string
