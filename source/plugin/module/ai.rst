@@ -19,7 +19,7 @@ module-ai
 
 在开始前，请您阅读 `[上古之石]Pathfinder插件教程 <https://www.mcbbs.net/thread-775757-1-1.html>`_ 以确保您大致了解原版 Pathfinder 的实现逻辑。
 
-在该模块中，由 `taboolib.module.ai.SimpleAi` 代替了 PathfinderGoal 类。
+在该模块中，由 ``taboolib.module.ai.SimpleAi`` 代替了 PathfinderGoal 类。
 
 .. code-block:: kotlin
 

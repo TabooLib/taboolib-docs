@@ -11,7 +11,7 @@ TabooLib ``6.0`` 由多个子模块构成，统一存放在 TabooLib 仓库中�
    "common", "TabooLib 的核心部分，环境部署以及跨平台接口"
    "common-5", "TabooLib 5.0 版本保留下来的一些工具"
    "module-ai", "管理与注册自定义实体 AI（Pathfinder）"
-   "module-chat", "Component（Json）信息构建工具与 1.16 RGB 颜色转换"
+   "module-chat", "Raw 信息构建工具与 1.16 RGB 颜色转换"
    "module-configuration", "Yaml 封装接口与配置文件管理工具"
    "module-database", "数据库管理工具"
    "module-database-mongodb", "数据库管理工具（MongoDB）"
