@@ -9,6 +9,16 @@ module-database
 * common
 * module-configuration（可选）
 
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-database")
+        // 可选
+        install("module-configuration")
+    }
+
 内容
 ========
 

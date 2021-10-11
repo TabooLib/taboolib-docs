@@ -11,6 +11,14 @@ module-lang
 * module-chat
 * module-configuration
 
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-common-5", "module-chat", "module-configuration")
+    }
+
 内容
 ========
 

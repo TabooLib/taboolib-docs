@@ -15,3 +15,13 @@ module-kether
 **该模块可以与下列模块交互：**
 
 * module-lang（为语言文件提供内联脚本）
+
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "common-5", "module-configuration", "module-kether")
+        // 可选
+        install("module-chat", "module-nms", "module-nms-util", "module-lang")
+    }

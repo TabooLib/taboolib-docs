@@ -9,6 +9,14 @@ module-effect
 * common
 * common-5
 
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "common-5", "module-effect")
+    }
+
 内容
 ========
 

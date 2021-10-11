@@ -13,3 +13,13 @@ module-porticus
 .. tips::
 
     未来可能会支持 Velocity 平台。
+
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-porticus")
+        // 依赖平台
+        install("platform-bukkit", "platform-bungee")
+    }

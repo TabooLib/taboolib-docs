@@ -9,3 +9,10 @@ module-database-mongodb
 * common
 * module-configuration
     
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-configuration", "module-database-mongodb")
+    }

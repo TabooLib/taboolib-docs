@@ -8,3 +8,11 @@ module-navigation
 
 * common
 * module-nms
+
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-nms", "module-navigation")
+    }

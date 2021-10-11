@@ -7,7 +7,18 @@ module-nms-util
 **该模块依赖于：**
 
 * common
+* module-nms
 * platform-bukkit
+
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-nms", "module-nms-util")
+        // 依赖平台
+        install("platform-bukkit")
+    }
 
 内容
 ========

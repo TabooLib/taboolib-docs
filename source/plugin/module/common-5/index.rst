@@ -8,6 +8,14 @@ common-5
 
 * common
 
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "common-5")
+    }
+
 内容
 ========
 

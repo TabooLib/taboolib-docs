@@ -9,6 +9,16 @@ module-ui
 * common
 * platform-bukkit
 
+**安装方式如下所示：**
+
+.. code-block:: kotlin
+
+    taboolib {
+        install("common", "module-ui")
+        // 依赖平台
+        install("platform-bukkit")
+    }
+
 内容
 ========
 
