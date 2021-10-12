@@ -4,7 +4,7 @@
 
 使用该扩展快速部署 SQL & SQLite 玩家数据库，数据结构如下所示：
 
-.. code-block:: json
+.. code-block:: javascript
 
     {
         "bukkitObj": {
