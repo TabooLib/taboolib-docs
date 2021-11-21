@@ -30,6 +30,8 @@ TabooLib ``6.0`` 由多个子模块构成，统一存放在 TabooLib 仓库中�
    "platform-nukkit", "Nukkit 实现"
    "platform-sponge-api7", "Sponge (api7) 实现"
    "platform-sponge-api8", "Sponge (api8) 实现"
+   "platform-sponge-api9", "Sponge (api9) 实现"
+   "platform-cloudnet-v3", "CloudNet (v3) 实现"
    "platform-velocity", "Velocity 实现"
    "platform-application", "独立程序实现"
 
