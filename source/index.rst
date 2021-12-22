@@ -7,7 +7,7 @@ TabooLib 开发文档
 
 欢迎来到 TabooLibDocs。这里定义了基于 `TabooLib <https://github.com/TabooLib/TabooLib>`__ ``6.0`` 编写 Minecraft 插件而提供的指导性准则和建议。
 
-TabooLib 是基于多种 Minecraft 服务端平台的插件开发框架，你可以在 **原生** 的 Bukkit 平台运行基于 TabooLib 编写的插件，同样这个插件也可以在 Sponge、Nukkit 等平台运行。你可以在 :doc:`这里 <versions/index>` 查看 TabooLib 的版本信息并下载 `SDK <https://github.com/taboolib/taboolib-sdk>`_ 快速开始。
+TabooLib 是基于多种 Minecraft 服务端平台的插件开发框架，你可以在 **原生** 的 Bukkit 平台运行基于 TabooLib 编写的插件，同样这个插件也可以在 Sponge、Nukkit 等平台运行。你可以在 :doc:`这里 <plugin/get-version>` 查看 TabooLib 的版本信息并通过 `QuickStart <https://tabooproject.org/quickstart.html>`_ 快速开始。
 
 TabooLib 自 ``6.0`` 版本起不再是 **动态下载** 模式，而是改为由依赖插件自行打包并随本体同时载入的纯类库形式。这极大程度的提升了插件的稳定性和安全性，正因如此 TabooLib 的所有工具也在这个版本进行了全面重新设计。整个库被拆分为数个模块，由这些模块共同组成 TabooLib ``6.0``，你可以在 :doc:`这里 <about/structure>` 了解模块之间的结构与相关信息，或直接访问我们的 `Github <https://github.com/taboolib>`_ 仓库。
 
@@ -85,8 +85,7 @@ TabooLib 自 ``6.0`` 版本起不再是 **动态下载** 模式，而是改为�
 
 -  `TabooLib 我的世界中文论坛 <https://www.mcbbs.net/thread-773065-1-1.html>`_
 -  `TabooLib 仓库 <https://github.com/TabooLib>`_
--  `TabooLib SDK <https://github.com/TabooLib/TabooLib-SDK>`_
 -  `TabooLib 问题反馈 <https://github.com/TabooLib/TabooLib/issues?q=>`_
--  `TabooLib Javadocs <https://jd.tabooproject.org>`_
+-  `TabooLib 快速开始 <https://tabooproject.org/quickstart.html>`_
 -  `Sponge 主页 <https://www.spongepowered.org>`_
 -  `Sponge 文档 <https://docs.spongepowered.org>`_
