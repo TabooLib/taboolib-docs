@@ -14,4 +14,5 @@ expansion
     :titlesonly:
 
     command-helper
+    javascript
     player-database
