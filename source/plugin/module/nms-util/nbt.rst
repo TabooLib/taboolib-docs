@@ -2,7 +2,7 @@
 物品 NBT
 ==========
 
-关于NBT的部分工具，具体表现为以下顶级或扩展函数：
+关于 NBT 的部分工具，具体表现为以下顶级或扩展函数：
 
 物品堆NBT
 ~~~~~~~~
@@ -12,7 +12,7 @@
     /**
      * 获取物品的NBT数据
      */
-    fun ItemStack.getItemTag()
+    fun ItemStack.getItemTag(): ItemTag
 
     /**
      * 写入物品的NBT数据

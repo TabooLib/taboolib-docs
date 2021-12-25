@@ -16,7 +16,7 @@ module-lang
 .. code-block:: kotlin
 
     taboolib {
-        install("common", "module-common-5", "module-chat", "module-configuration")
+        install("common", "common-5", "module-chat", "module-configuration")
     }
 
 内容

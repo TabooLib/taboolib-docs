@@ -12,10 +12,10 @@
 .. code-block:: kotlin
 
     /**
-     * 玩家选择地区事件
+     * 玩家选择语言地区事件
      *
      * @param player 玩家
-     * @param locale 地区
+     * @param locale 语言地区（例如：zh_CN）
      */
     class PlayerSelectLocaleEvent(val player: ProxyPlayer, var locale: String) : ProxyEvent() {
 
@@ -24,9 +24,9 @@
     }
 
     /**
-     * 系统选择地区事件
+     * 系统选择语言地区事件
      *
-     * @param locale 地区
+     * @param locale 语言地区（例如：zh_CN）
      */
     class SystemSelectLocaleEvent(var locale: String) : ProxyEvent() {
 
