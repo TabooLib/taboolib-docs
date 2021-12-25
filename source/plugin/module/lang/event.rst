@@ -11,25 +11,25 @@
 
 .. code-block:: kotlin
 
-/**
- * 玩家选择地区事件
- *
- * @param player 玩家
- * @param locale 地区
- */
-class PlayerSelectLocaleEvent(val player: ProxyPlayer, var locale: String) : ProxyEvent() {
+    /**
+     * 玩家选择地区事件
+     *
+     * @param player 玩家
+     * @param locale 地区
+     */
+    class PlayerSelectLocaleEvent(val player: ProxyPlayer, var locale: String) : ProxyEvent() {
 
-    override val allowCancelled: Boolean
-        get() = false
-}
+        override val allowCancelled: Boolean
+            get() = false
+    }
 
-/**
- * 系统选择地区事件
- *
- * @param locale 地区
- */
-class SystemSelectLocaleEvent(var locale: String) : ProxyEvent() {
+    /**
+     * 系统选择地区事件
+     *
+     * @param locale 地区
+     */
+    class SystemSelectLocaleEvent(var locale: String) : ProxyEvent() {
 
-    override val allowCancelled: Boolean
-        get() = false
-}
+        override val allowCancelled: Boolean
+            get() = false
+    }
