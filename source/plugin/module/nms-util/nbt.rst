@@ -10,12 +10,12 @@
 .. code-block:: kotlin
 
     /**
-     * 获取物品的NBT
+     * 获取物品的NBT数据
      */
     fun ItemStack.getItemTag()
 
     /**
-     * 保存物品的NBT
+     * 写入物品的NBT数据
      *
      * @param itemTag NBT
      * @return 物品堆
