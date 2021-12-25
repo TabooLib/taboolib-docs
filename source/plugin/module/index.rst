@@ -46,6 +46,7 @@
     kether
     metrics
     navigation
+    lang/index
     nms/index
     nms-util/index
     porticus
