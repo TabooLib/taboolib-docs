@@ -9,6 +9,7 @@ Linked（多页）
 ========
 
 .. code-block:: kotlin
+
     Player.openMenu<Linked<物品类型>>(标题){
         // 界面应该显示几行
         rows(行数)
