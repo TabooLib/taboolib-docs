@@ -10,13 +10,13 @@ TabooLib 使用 **侵入式** 依赖注入（Dependency Injection）的方式向
 
     import taboolib.common.platform.*
     import taboolib.module.configuration.Config
-    import taboolib.module.configuration.SecuredFile
+    import taboolib.module.configuration.Configuration
     import org.bukkit.event.player.PlayerJoinEvent
 
     object Example {
 
         @Config
-        lateinit var conf: SecuredFile
+        lateinit var conf: Configuration
             private set
 
         @Awake(LifeCycle.ENABLE)
