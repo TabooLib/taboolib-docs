@@ -85,7 +85,7 @@ SQLite
 使用方式
 ~~~~~~~~
 
-在服务器启动时必须通过 ``setupPlayerDatabase`` 方法初始化数据库，否则将无法进行接下来的行为：
+在服务器启动时必须通过 `setupPlayerDatabase` 方法初始化数据库，否则将无法进行接下来的行为：
 
 .. code-block:: kotlin
 
