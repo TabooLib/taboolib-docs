@@ -23,3 +23,11 @@
     val main = mainCommand {
         createHelper()
     }
+
+.. code-block:: kotlin
+    command("command") {
+        createHelper()
+        literial("sub") {
+            // ...
+        }
+    }
